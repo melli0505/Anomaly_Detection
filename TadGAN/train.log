@@ -1,0 +1,1787 @@
+INFO:root:Number of train datapoints is 1037
+INFO:root:Number of samples in train dataset 1037
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.018 critic z loss -0.091 
+encoder loss 0.031 decoder loss 0.157
+
+INFO:root:Number of train datapoints is 1037
+INFO:root:Number of samples in train dataset 1037
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.034 critic z loss 0.253 
+encoder loss 0.027 decoder loss -0.151
+
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.050 critic z loss -0.038 
+encoder loss 0.000 decoder loss 0.121
+
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.040 critic z loss 0.072 
+encoder loss 0.005 decoder loss 0.007
+
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.025 critic z loss -0.074 
+encoder loss 0.030 decoder loss 0.154
+
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.062 critic z loss 0.115 
+encoder loss -0.009 decoder loss -0.048
+
+DEBUG:root:Epoch 1
+DEBUG:root:Critic training done in epoch 1
+DEBUG:root:Encoder decoder training done in epoch 1
+DEBUG:root:critic x loss 0.057 critic z loss 0.112 
+encoder loss -0.005 decoder loss -0.043
+
+DEBUG:root:Epoch 2
+DEBUG:root:Critic training done in epoch 2
+DEBUG:root:Encoder decoder training done in epoch 2
+DEBUG:root:critic x loss 0.053 critic z loss 0.109 
+encoder loss -0.000 decoder loss -0.041
+
+DEBUG:root:Epoch 3
+DEBUG:root:Critic training done in epoch 3
+DEBUG:root:Encoder decoder training done in epoch 3
+DEBUG:root:critic x loss 0.048 critic z loss 0.104 
+encoder loss 0.004 decoder loss -0.036
+
+DEBUG:root:Epoch 4
+DEBUG:root:Critic training done in epoch 4
+DEBUG:root:Encoder decoder training done in epoch 4
+DEBUG:root:critic x loss 0.044 critic z loss 0.101 
+encoder loss 0.008 decoder loss -0.032
+
+DEBUG:root:Epoch 5
+DEBUG:root:Critic training done in epoch 5
+DEBUG:root:Encoder decoder training done in epoch 5
+DEBUG:root:critic x loss 0.040 critic z loss 0.098 
+encoder loss 0.012 decoder loss -0.030
+
+DEBUG:root:Epoch 6
+DEBUG:root:Critic training done in epoch 6
+DEBUG:root:Encoder decoder training done in epoch 6
+DEBUG:root:critic x loss 0.035 critic z loss 0.095 
+encoder loss 0.016 decoder loss -0.034
+
+DEBUG:root:Epoch 7
+DEBUG:root:Critic training done in epoch 7
+DEBUG:root:Encoder decoder training done in epoch 7
+DEBUG:root:critic x loss 0.031 critic z loss 0.092 
+encoder loss 0.020 decoder loss -0.022
+
+DEBUG:root:Epoch 8
+DEBUG:root:Critic training done in epoch 8
+DEBUG:root:Encoder decoder training done in epoch 8
+DEBUG:root:critic x loss 0.027 critic z loss 0.089 
+encoder loss 0.024 decoder loss -0.021
+
+DEBUG:root:Epoch 9
+DEBUG:root:Critic training done in epoch 9
+DEBUG:root:Encoder decoder training done in epoch 9
+DEBUG:root:critic x loss 0.023 critic z loss 0.083 
+encoder loss 0.028 decoder loss -0.020
+
+DEBUG:root:Epoch 10
+DEBUG:root:Critic training done in epoch 10
+DEBUG:root:Encoder decoder training done in epoch 10
+DEBUG:root:critic x loss 0.019 critic z loss 0.081 
+encoder loss 0.032 decoder loss -0.009
+
+DEBUG:root:Epoch 11
+DEBUG:root:Critic training done in epoch 11
+DEBUG:root:Encoder decoder training done in epoch 11
+DEBUG:root:critic x loss 0.015 critic z loss 0.078 
+encoder loss 0.036 decoder loss -0.008
+
+DEBUG:root:Epoch 12
+DEBUG:root:Critic training done in epoch 12
+DEBUG:root:Encoder decoder training done in epoch 12
+DEBUG:root:critic x loss 0.012 critic z loss 0.074 
+encoder loss 0.040 decoder loss -0.013
+
+DEBUG:root:Epoch 13
+DEBUG:root:Critic training done in epoch 13
+DEBUG:root:Encoder decoder training done in epoch 13
+DEBUG:root:critic x loss 0.008 critic z loss 0.071 
+encoder loss 0.044 decoder loss -0.006
+
+DEBUG:root:Epoch 14
+DEBUG:root:Critic training done in epoch 14
+DEBUG:root:Encoder decoder training done in epoch 14
+DEBUG:root:critic x loss 0.004 critic z loss 0.068 
+encoder loss 0.047 decoder loss -0.000
+
+DEBUG:root:Epoch 15
+DEBUG:root:Critic training done in epoch 15
+DEBUG:root:Encoder decoder training done in epoch 15
+DEBUG:root:critic x loss 0.001 critic z loss 0.065 
+encoder loss 0.051 decoder loss 0.002
+
+DEBUG:root:Epoch 16
+DEBUG:root:Critic training done in epoch 16
+DEBUG:root:Encoder decoder training done in epoch 16
+DEBUG:root:critic x loss -0.003 critic z loss 0.060 
+encoder loss 0.055 decoder loss 0.008
+
+DEBUG:root:Epoch 17
+DEBUG:root:Critic training done in epoch 17
+DEBUG:root:Encoder decoder training done in epoch 17
+DEBUG:root:critic x loss -0.006 critic z loss 0.058 
+encoder loss 0.058 decoder loss 0.010
+
+DEBUG:root:Epoch 18
+DEBUG:root:Critic training done in epoch 18
+DEBUG:root:Encoder decoder training done in epoch 18
+DEBUG:root:critic x loss -0.010 critic z loss 0.055 
+encoder loss 0.062 decoder loss 0.012
+
+DEBUG:root:Epoch 19
+DEBUG:root:Critic training done in epoch 19
+DEBUG:root:Encoder decoder training done in epoch 19
+DEBUG:root:critic x loss -0.013 critic z loss 0.050 
+encoder loss 0.066 decoder loss 0.017
+
+DEBUG:root:Epoch 20
+DEBUG:root:Critic training done in epoch 20
+DEBUG:root:Encoder decoder training done in epoch 20
+DEBUG:root:critic x loss -0.016 critic z loss 0.048 
+encoder loss 0.069 decoder loss 0.018
+
+DEBUG:root:Epoch 21
+DEBUG:root:Critic training done in epoch 21
+DEBUG:root:Encoder decoder training done in epoch 21
+DEBUG:root:critic x loss -0.020 critic z loss 0.044 
+encoder loss 0.073 decoder loss 0.024
+
+DEBUG:root:Epoch 22
+DEBUG:root:Critic training done in epoch 22
+DEBUG:root:Encoder decoder training done in epoch 22
+DEBUG:root:critic x loss -0.023 critic z loss 0.042 
+encoder loss 0.076 decoder loss 0.027
+
+DEBUG:root:Epoch 23
+DEBUG:root:Critic training done in epoch 23
+DEBUG:root:Encoder decoder training done in epoch 23
+DEBUG:root:critic x loss -0.026 critic z loss 0.037 
+encoder loss 0.080 decoder loss 0.028
+
+DEBUG:root:Epoch 24
+DEBUG:root:Critic training done in epoch 24
+DEBUG:root:Encoder decoder training done in epoch 24
+DEBUG:root:critic x loss -0.029 critic z loss 0.034 
+encoder loss 0.084 decoder loss 0.028
+
+DEBUG:root:Epoch 25
+DEBUG:root:Critic training done in epoch 25
+DEBUG:root:Encoder decoder training done in epoch 25
+DEBUG:root:critic x loss -0.033 critic z loss 0.030 
+encoder loss 0.087 decoder loss 0.038
+
+DEBUG:root:Epoch 26
+DEBUG:root:Critic training done in epoch 26
+DEBUG:root:Encoder decoder training done in epoch 26
+DEBUG:root:critic x loss -0.036 critic z loss 0.026 
+encoder loss 0.091 decoder loss 0.039
+
+DEBUG:root:Epoch 27
+DEBUG:root:Critic training done in epoch 27
+DEBUG:root:Encoder decoder training done in epoch 27
+DEBUG:root:critic x loss -0.039 critic z loss 0.025 
+encoder loss 0.094 decoder loss 0.041
+
+DEBUG:root:Epoch 28
+DEBUG:root:Critic training done in epoch 28
+DEBUG:root:Encoder decoder training done in epoch 28
+DEBUG:root:critic x loss -0.042 critic z loss 0.020 
+encoder loss 0.098 decoder loss 0.045
+
+DEBUG:root:Epoch 29
+DEBUG:root:Critic training done in epoch 29
+DEBUG:root:Encoder decoder training done in epoch 29
+DEBUG:root:critic x loss -0.045 critic z loss 0.017 
+encoder loss 0.101 decoder loss 0.049
+
+DEBUG:root:Epoch 30
+DEBUG:root:Critic training done in epoch 30
+DEBUG:root:Encoder decoder training done in epoch 30
+DEBUG:root:critic x loss -0.048 critic z loss 0.014 
+encoder loss 0.105 decoder loss 0.051
+
+DEBUG:root:Epoch 31
+DEBUG:root:Critic training done in epoch 31
+DEBUG:root:Encoder decoder training done in epoch 31
+DEBUG:root:critic x loss -0.051 critic z loss 0.010 
+encoder loss 0.108 decoder loss 0.058
+
+DEBUG:root:Epoch 32
+DEBUG:root:Critic training done in epoch 32
+DEBUG:root:Encoder decoder training done in epoch 32
+DEBUG:root:critic x loss -0.054 critic z loss 0.006 
+encoder loss 0.112 decoder loss 0.059
+
+DEBUG:root:Epoch 33
+DEBUG:root:Critic training done in epoch 33
+DEBUG:root:Encoder decoder training done in epoch 33
+DEBUG:root:critic x loss -0.057 critic z loss 0.005 
+encoder loss 0.115 decoder loss 0.065
+
+DEBUG:root:Epoch 34
+DEBUG:root:Critic training done in epoch 34
+DEBUG:root:Encoder decoder training done in epoch 34
+DEBUG:root:critic x loss -0.060 critic z loss -0.001 
+encoder loss 0.119 decoder loss 0.065
+
+DEBUG:root:Epoch 35
+DEBUG:root:Critic training done in epoch 35
+DEBUG:root:Encoder decoder training done in epoch 35
+DEBUG:root:critic x loss -0.063 critic z loss -0.003 
+encoder loss 0.122 decoder loss 0.070
+
+DEBUG:root:Epoch 36
+DEBUG:root:Critic training done in epoch 36
+DEBUG:root:Encoder decoder training done in epoch 36
+DEBUG:root:critic x loss -0.065 critic z loss -0.008 
+encoder loss 0.125 decoder loss 0.073
+
+DEBUG:root:Epoch 37
+DEBUG:root:Critic training done in epoch 37
+DEBUG:root:Encoder decoder training done in epoch 37
+DEBUG:root:critic x loss -0.068 critic z loss -0.010 
+encoder loss 0.129 decoder loss 0.074
+
+DEBUG:root:Epoch 38
+DEBUG:root:Critic training done in epoch 38
+DEBUG:root:Encoder decoder training done in epoch 38
+DEBUG:root:critic x loss -0.071 critic z loss -0.016 
+encoder loss 0.132 decoder loss 0.079
+
+DEBUG:root:Epoch 39
+DEBUG:root:Critic training done in epoch 39
+DEBUG:root:Encoder decoder training done in epoch 39
+DEBUG:root:critic x loss -0.074 critic z loss -0.017 
+encoder loss 0.136 decoder loss 0.079
+
+DEBUG:root:Epoch 40
+DEBUG:root:Critic training done in epoch 40
+DEBUG:root:Encoder decoder training done in epoch 40
+DEBUG:root:critic x loss -0.076 critic z loss -0.021 
+encoder loss 0.139 decoder loss 0.087
+
+DEBUG:root:Epoch 41
+DEBUG:root:Critic training done in epoch 41
+DEBUG:root:Encoder decoder training done in epoch 41
+DEBUG:root:critic x loss -0.079 critic z loss -0.026 
+encoder loss 0.142 decoder loss 0.090
+
+DEBUG:root:Epoch 42
+DEBUG:root:Critic training done in epoch 42
+DEBUG:root:Encoder decoder training done in epoch 42
+DEBUG:root:critic x loss -0.082 critic z loss -0.028 
+encoder loss 0.145 decoder loss 0.095
+
+DEBUG:root:Epoch 43
+DEBUG:root:Critic training done in epoch 43
+DEBUG:root:Encoder decoder training done in epoch 43
+DEBUG:root:critic x loss -0.084 critic z loss -0.032 
+encoder loss 0.149 decoder loss 0.096
+
+DEBUG:root:Epoch 44
+DEBUG:root:Critic training done in epoch 44
+DEBUG:root:Encoder decoder training done in epoch 44
+DEBUG:root:critic x loss -0.087 critic z loss -0.034 
+encoder loss 0.152 decoder loss 0.100
+
+DEBUG:root:Epoch 45
+DEBUG:root:Critic training done in epoch 45
+DEBUG:root:Encoder decoder training done in epoch 45
+DEBUG:root:critic x loss -0.089 critic z loss -0.037 
+encoder loss 0.155 decoder loss 0.103
+
+DEBUG:root:Epoch 46
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.010 critic z loss 0.390 
+encoder loss 0.043 decoder loss -0.314
+
+DEBUG:root:Epoch 1
+DEBUG:root:Critic training done in epoch 1
+DEBUG:root:Encoder decoder training done in epoch 1
+DEBUG:root:critic x loss 0.005 critic z loss 0.386 
+encoder loss 0.048 decoder loss -0.305
+
+DEBUG:root:Epoch 2
+DEBUG:root:Critic training done in epoch 2
+DEBUG:root:Encoder decoder training done in epoch 2
+DEBUG:root:critic x loss 0.001 critic z loss 0.383 
+encoder loss 0.052 decoder loss -0.305
+
+DEBUG:root:Epoch 3
+DEBUG:root:Critic training done in epoch 3
+DEBUG:root:Encoder decoder training done in epoch 3
+DEBUG:root:critic x loss -0.003 critic z loss 0.377 
+encoder loss 0.056 decoder loss -0.303
+
+DEBUG:root:Epoch 4
+DEBUG:root:Critic training done in epoch 4
+DEBUG:root:Encoder decoder training done in epoch 4
+DEBUG:root:critic x loss -0.006 critic z loss 0.375 
+encoder loss 0.060 decoder loss -0.296
+
+DEBUG:root:Epoch 5
+DEBUG:root:Critic training done in epoch 5
+DEBUG:root:Encoder decoder training done in epoch 5
+DEBUG:root:critic x loss -0.010 critic z loss 0.372 
+encoder loss 0.065 decoder loss -0.290
+
+DEBUG:root:Epoch 6
+DEBUG:root:Critic training done in epoch 6
+DEBUG:root:Encoder decoder training done in epoch 6
+DEBUG:root:critic x loss -0.014 critic z loss 0.367 
+encoder loss 0.069 decoder loss -0.297
+
+DEBUG:root:Epoch 7
+DEBUG:root:Critic training done in epoch 7
+DEBUG:root:Encoder decoder training done in epoch 7
+DEBUG:root:critic x loss -0.018 critic z loss 0.364 
+encoder loss 0.073 decoder loss -0.287
+
+DEBUG:root:Epoch 8
+DEBUG:root:Critic training done in epoch 8
+DEBUG:root:Encoder decoder training done in epoch 8
+DEBUG:root:critic x loss -0.022 critic z loss 0.360 
+encoder loss 0.077 decoder loss -0.284
+
+DEBUG:root:Epoch 9
+DEBUG:root:Critic training done in epoch 9
+DEBUG:root:Encoder decoder training done in epoch 9
+DEBUG:root:critic x loss -0.026 critic z loss 0.356 
+encoder loss 0.081 decoder loss -0.279
+
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.034 critic z loss -0.056 
+encoder loss 0.013 decoder loss 0.141
+
+DEBUG:root:Epoch 1
+DEBUG:root:Critic training done in epoch 1
+DEBUG:root:Encoder decoder training done in epoch 1
+DEBUG:root:critic x loss 0.030 critic z loss -0.061 
+encoder loss 0.017 decoder loss 0.146
+
+DEBUG:root:Epoch 2
+DEBUG:root:Critic training done in epoch 2
+DEBUG:root:Encoder decoder training done in epoch 2
+DEBUG:root:critic x loss 0.026 critic z loss -0.064 
+encoder loss 0.021 decoder loss 0.153
+
+DEBUG:root:Epoch 3
+DEBUG:root:Critic training done in epoch 3
+DEBUG:root:Encoder decoder training done in epoch 3
+DEBUG:root:critic x loss 0.021 critic z loss -0.070 
+encoder loss 0.025 decoder loss 0.157
+
+DEBUG:root:Epoch 4
+DEBUG:root:Critic training done in epoch 4
+DEBUG:root:Encoder decoder training done in epoch 4
+DEBUG:root:critic x loss 0.017 critic z loss -0.073 
+encoder loss 0.029 decoder loss 0.156
+
+DEBUG:root:Epoch 5
+DEBUG:root:Critic training done in epoch 5
+DEBUG:root:Encoder decoder training done in epoch 5
+DEBUG:root:critic x loss 0.013 critic z loss -0.078 
+encoder loss 0.033 decoder loss 0.164
+
+DEBUG:root:Epoch 6
+DEBUG:root:Critic training done in epoch 6
+DEBUG:root:Encoder decoder training done in epoch 6
+DEBUG:root:critic x loss 0.010 critic z loss -0.082 
+encoder loss 0.037 decoder loss 0.164
+
+DEBUG:root:Epoch 7
+DEBUG:root:Critic training done in epoch 7
+DEBUG:root:Encoder decoder training done in epoch 7
+DEBUG:root:critic x loss 0.006 critic z loss -0.083 
+encoder loss 0.041 decoder loss 0.164
+
+DEBUG:root:Epoch 8
+DEBUG:root:Critic training done in epoch 8
+DEBUG:root:Encoder decoder training done in epoch 8
+DEBUG:root:critic x loss 0.002 critic z loss -0.085 
+encoder loss 0.045 decoder loss 0.166
+
+DEBUG:root:Epoch 9
+DEBUG:root:Critic training done in epoch 9
+DEBUG:root:Encoder decoder training done in epoch 9
+DEBUG:root:critic x loss -0.002 critic z loss -0.090 
+encoder loss 0.048 decoder loss 0.173
+
+INFO:root:Number of train datapoints is 4327
+INFO:root:Number of samples in train dataset 4327
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.020 critic z loss 0.163 
+encoder loss 0.028 decoder loss -0.085
+
+DEBUG:root:Epoch 1
+DEBUG:root:Critic training done in epoch 1
+DEBUG:root:Encoder decoder training done in epoch 1
+DEBUG:root:critic x loss 0.016 critic z loss 0.159 
+encoder loss 0.033 decoder loss -0.081
+
+DEBUG:root:Epoch 2
+DEBUG:root:Critic training done in epoch 2
+DEBUG:root:Encoder decoder training done in epoch 2
+DEBUG:root:critic x loss 0.012 critic z loss 0.155 
+encoder loss 0.037 decoder loss -0.071
+
+DEBUG:root:Epoch 3
+DEBUG:root:Critic training done in epoch 3
+DEBUG:root:Encoder decoder training done in epoch 3
+DEBUG:root:critic x loss 0.008 critic z loss 0.150 
+encoder loss 0.041 decoder loss -0.072
+
+DEBUG:root:Epoch 4
+DEBUG:root:Critic training done in epoch 4
+DEBUG:root:Encoder decoder training done in epoch 4
+DEBUG:root:critic x loss 0.003 critic z loss 0.148 
+encoder loss 0.046 decoder loss -0.067
+
+DEBUG:root:Epoch 5
+DEBUG:root:Critic training done in epoch 5
+DEBUG:root:Encoder decoder training done in epoch 5
+DEBUG:root:critic x loss -0.001 critic z loss 0.144 
+encoder loss 0.050 decoder loss -0.063
+
+DEBUG:root:Epoch 6
+DEBUG:root:Critic training done in epoch 6
+DEBUG:root:Encoder decoder training done in epoch 6
+DEBUG:root:critic x loss -0.005 critic z loss 0.141 
+encoder loss 0.054 decoder loss -0.057
+
+DEBUG:root:Epoch 7
+DEBUG:root:Critic training done in epoch 7
+DEBUG:root:Encoder decoder training done in epoch 7
+DEBUG:root:critic x loss -0.009 critic z loss 0.137 
+encoder loss 0.058 decoder loss -0.058
+
+DEBUG:root:Epoch 8
+DEBUG:root:Critic training done in epoch 8
+DEBUG:root:Encoder decoder training done in epoch 8
+DEBUG:root:critic x loss -0.012 critic z loss 0.133 
+encoder loss 0.062 decoder loss -0.053
+
+DEBUG:root:Epoch 9
+DEBUG:root:Critic training done in epoch 9
+DEBUG:root:Encoder decoder training done in epoch 9
+DEBUG:root:critic x loss -0.016 critic z loss 0.131 
+encoder loss 0.067 decoder loss -0.051
+
+INFO:root:Number of train datapoints is 5592
+INFO:root:Number of samples in train dataset 5592
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.029 critic z loss -0.339 
+encoder loss 0.023 decoder loss 0.421
+
+DEBUG:root:Epoch 1
+DEBUG:root:Critic training done in epoch 1
+DEBUG:root:Encoder decoder training done in epoch 1
+DEBUG:root:critic x loss 0.023 critic z loss -0.343 
+encoder loss 0.029 decoder loss 0.423
+
+DEBUG:root:Epoch 2
+DEBUG:root:Critic training done in epoch 2
+DEBUG:root:Encoder decoder training done in epoch 2
+DEBUG:root:critic x loss 0.017 critic z loss -0.349 
+encoder loss 0.035 decoder loss 0.426
+
+DEBUG:root:Epoch 3
+DEBUG:root:Critic training done in epoch 3
+DEBUG:root:Encoder decoder training done in epoch 3
+DEBUG:root:critic x loss 0.011 critic z loss -0.351 
+encoder loss 0.041 decoder loss 0.432
+
+DEBUG:root:Epoch 4
+DEBUG:root:Critic training done in epoch 4
+DEBUG:root:Encoder decoder training done in epoch 4
+DEBUG:root:critic x loss 0.005 critic z loss -0.355 
+encoder loss 0.047 decoder loss 0.435
+
+DEBUG:root:Epoch 5
+DEBUG:root:Critic training done in epoch 5
+DEBUG:root:Encoder decoder training done in epoch 5
+DEBUG:root:critic x loss -0.001 critic z loss -0.361 
+encoder loss 0.053 decoder loss 0.437
+
+DEBUG:root:Epoch 6
+DEBUG:root:Critic training done in epoch 6
+DEBUG:root:Encoder decoder training done in epoch 6
+DEBUG:root:critic x loss -0.006 critic z loss -0.363 
+encoder loss 0.059 decoder loss 0.443
+
+DEBUG:root:Epoch 7
+DEBUG:root:Critic training done in epoch 7
+DEBUG:root:Encoder decoder training done in epoch 7
+DEBUG:root:critic x loss -0.012 critic z loss -0.368 
+encoder loss 0.065 decoder loss 0.449
+
+DEBUG:root:Epoch 8
+DEBUG:root:Critic training done in epoch 8
+DEBUG:root:Encoder decoder training done in epoch 8
+DEBUG:root:critic x loss -0.017 critic z loss -0.372 
+encoder loss 0.070 decoder loss 0.453
+
+DEBUG:root:Epoch 9
+DEBUG:root:Critic training done in epoch 9
+DEBUG:root:Encoder decoder training done in epoch 9
+DEBUG:root:critic x loss -0.022 critic z loss -0.375 
+encoder loss 0.076 decoder loss 0.454
+
+INFO:root:Number of train datapoints is 5592
+INFO:root:Number of samples in train dataset 5592
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.071 critic z loss 0.075 
+encoder loss -0.026 decoder loss -0.009
+
+DEBUG:root:Epoch 1
+DEBUG:root:Critic training done in epoch 1
+DEBUG:root:Encoder decoder training done in epoch 1
+DEBUG:root:critic x loss 0.066 critic z loss 0.074 
+encoder loss -0.021 decoder loss -0.006
+
+DEBUG:root:Epoch 2
+DEBUG:root:Critic training done in epoch 2
+DEBUG:root:Encoder decoder training done in epoch 2
+DEBUG:root:critic x loss 0.062 critic z loss 0.069 
+encoder loss -0.016 decoder loss -0.002
+
+DEBUG:root:Epoch 3
+DEBUG:root:Critic training done in epoch 3
+DEBUG:root:Encoder decoder training done in epoch 3
+DEBUG:root:critic x loss 0.057 critic z loss 0.062 
+encoder loss -0.012 decoder loss 0.000
+
+DEBUG:root:Epoch 4
+DEBUG:root:Critic training done in epoch 4
+DEBUG:root:Encoder decoder training done in epoch 4
+DEBUG:root:critic x loss 0.052 critic z loss 0.060 
+encoder loss -0.007 decoder loss 0.009
+
+DEBUG:root:Epoch 5
+DEBUG:root:Critic training done in epoch 5
+DEBUG:root:Encoder decoder training done in epoch 5
+DEBUG:root:critic x loss 0.048 critic z loss 0.055 
+encoder loss -0.002 decoder loss 0.012
+
+DEBUG:root:Epoch 6
+DEBUG:root:Critic training done in epoch 6
+DEBUG:root:Encoder decoder training done in epoch 6
+DEBUG:root:critic x loss 0.043 critic z loss 0.051 
+encoder loss 0.003 decoder loss 0.014
+
+DEBUG:root:Epoch 7
+DEBUG:root:Critic training done in epoch 7
+DEBUG:root:Encoder decoder training done in epoch 7
+DEBUG:root:critic x loss 0.039 critic z loss 0.046 
+encoder loss 0.007 decoder loss 0.020
+
+DEBUG:root:Epoch 8
+DEBUG:root:Critic training done in epoch 8
+DEBUG:root:Encoder decoder training done in epoch 8
+DEBUG:root:critic x loss 0.035 critic z loss 0.042 
+encoder loss 0.012 decoder loss 0.025
+
+DEBUG:root:Epoch 9
+DEBUG:root:Critic training done in epoch 9
+DEBUG:root:Encoder decoder training done in epoch 9
+DEBUG:root:critic x loss 0.030 critic z loss 0.037 
+encoder loss 0.016 decoder loss 0.026
+
+DEBUG:root:Epoch 10
+DEBUG:root:Critic training done in epoch 10
+DEBUG:root:Encoder decoder training done in epoch 10
+DEBUG:root:critic x loss 0.026 critic z loss 0.035 
+encoder loss 0.021 decoder loss 0.034
+
+DEBUG:root:Epoch 11
+DEBUG:root:Critic training done in epoch 11
+DEBUG:root:Encoder decoder training done in epoch 11
+DEBUG:root:critic x loss 0.022 critic z loss 0.029 
+encoder loss 0.025 decoder loss 0.035
+
+DEBUG:root:Epoch 12
+DEBUG:root:Critic training done in epoch 12
+DEBUG:root:Encoder decoder training done in epoch 12
+DEBUG:root:critic x loss 0.018 critic z loss 0.025 
+encoder loss 0.030 decoder loss 0.044
+
+DEBUG:root:Epoch 13
+DEBUG:root:Critic training done in epoch 13
+DEBUG:root:Encoder decoder training done in epoch 13
+DEBUG:root:critic x loss 0.014 critic z loss 0.021 
+encoder loss 0.034 decoder loss 0.046
+
+DEBUG:root:Epoch 14
+DEBUG:root:Critic training done in epoch 14
+DEBUG:root:Encoder decoder training done in epoch 14
+DEBUG:root:critic x loss 0.010 critic z loss 0.016 
+encoder loss 0.039 decoder loss 0.049
+
+DEBUG:root:Epoch 15
+DEBUG:root:Critic training done in epoch 15
+DEBUG:root:Encoder decoder training done in epoch 15
+DEBUG:root:critic x loss 0.006 critic z loss 0.011 
+encoder loss 0.043 decoder loss 0.055
+
+DEBUG:root:Epoch 16
+DEBUG:root:Critic training done in epoch 16
+DEBUG:root:Encoder decoder training done in epoch 16
+DEBUG:root:critic x loss 0.002 critic z loss 0.007 
+encoder loss 0.048 decoder loss 0.057
+
+DEBUG:root:Epoch 17
+DEBUG:root:Critic training done in epoch 17
+DEBUG:root:Encoder decoder training done in epoch 17
+DEBUG:root:critic x loss -0.002 critic z loss 0.003 
+encoder loss 0.052 decoder loss 0.063
+
+DEBUG:root:Epoch 18
+DEBUG:root:Critic training done in epoch 18
+DEBUG:root:Encoder decoder training done in epoch 18
+DEBUG:root:critic x loss -0.005 critic z loss -0.002 
+encoder loss 0.056 decoder loss 0.070
+
+DEBUG:root:Epoch 19
+DEBUG:root:Critic training done in epoch 19
+DEBUG:root:Encoder decoder training done in epoch 19
+DEBUG:root:critic x loss -0.009 critic z loss -0.006 
+encoder loss 0.061 decoder loss 0.070
+
+DEBUG:root:Epoch 20
+DEBUG:root:Critic training done in epoch 20
+DEBUG:root:Encoder decoder training done in epoch 20
+DEBUG:root:critic x loss -0.013 critic z loss -0.010 
+encoder loss 0.065 decoder loss 0.079
+
+DEBUG:root:Epoch 21
+DEBUG:root:Critic training done in epoch 21
+DEBUG:root:Encoder decoder training done in epoch 21
+DEBUG:root:critic x loss -0.016 critic z loss -0.015 
+encoder loss 0.070 decoder loss 0.079
+
+DEBUG:root:Epoch 22
+DEBUG:root:Critic training done in epoch 22
+DEBUG:root:Encoder decoder training done in epoch 22
+DEBUG:root:critic x loss -0.020 critic z loss -0.020 
+encoder loss 0.074 decoder loss 0.084
+
+DEBUG:root:Epoch 23
+DEBUG:root:Critic training done in epoch 23
+DEBUG:root:Encoder decoder training done in epoch 23
+DEBUG:root:critic x loss -0.024 critic z loss -0.022 
+encoder loss 0.078 decoder loss 0.088
+
+DEBUG:root:Epoch 24
+DEBUG:root:Critic training done in epoch 24
+DEBUG:root:Encoder decoder training done in epoch 24
+DEBUG:root:critic x loss -0.027 critic z loss -0.027 
+encoder loss 0.082 decoder loss 0.092
+
+DEBUG:root:Epoch 25
+DEBUG:root:Critic training done in epoch 25
+DEBUG:root:Encoder decoder training done in epoch 25
+DEBUG:root:critic x loss -0.031 critic z loss -0.032 
+encoder loss 0.087 decoder loss 0.100
+
+DEBUG:root:Epoch 26
+DEBUG:root:Critic training done in epoch 26
+DEBUG:root:Encoder decoder training done in epoch 26
+DEBUG:root:critic x loss -0.034 critic z loss -0.036 
+encoder loss 0.091 decoder loss 0.105
+
+DEBUG:root:Epoch 27
+DEBUG:root:Critic training done in epoch 27
+DEBUG:root:Encoder decoder training done in epoch 27
+DEBUG:root:critic x loss -0.037 critic z loss -0.040 
+encoder loss 0.095 decoder loss 0.108
+
+DEBUG:root:Epoch 28
+DEBUG:root:Critic training done in epoch 28
+DEBUG:root:Encoder decoder training done in epoch 28
+DEBUG:root:critic x loss -0.041 critic z loss -0.045 
+encoder loss 0.099 decoder loss 0.108
+
+DEBUG:root:Epoch 29
+DEBUG:root:Critic training done in epoch 29
+DEBUG:root:Encoder decoder training done in epoch 29
+DEBUG:root:critic x loss -0.044 critic z loss -0.050 
+encoder loss 0.104 decoder loss 0.117
+
+DEBUG:root:Epoch 30
+DEBUG:root:Critic training done in epoch 30
+DEBUG:root:Encoder decoder training done in epoch 30
+DEBUG:root:critic x loss -0.047 critic z loss -0.051 
+encoder loss 0.108 decoder loss 0.118
+
+DEBUG:root:Epoch 31
+DEBUG:root:Critic training done in epoch 31
+DEBUG:root:Encoder decoder training done in epoch 31
+DEBUG:root:critic x loss -0.051 critic z loss -0.058 
+encoder loss 0.112 decoder loss 0.119
+
+DEBUG:root:Epoch 32
+DEBUG:root:Critic training done in epoch 32
+DEBUG:root:Encoder decoder training done in epoch 32
+DEBUG:root:critic x loss -0.054 critic z loss -0.063 
+encoder loss 0.116 decoder loss 0.128
+
+DEBUG:root:Epoch 33
+DEBUG:root:Critic training done in epoch 33
+DEBUG:root:Encoder decoder training done in epoch 33
+DEBUG:root:critic x loss -0.057 critic z loss -0.067 
+encoder loss 0.120 decoder loss 0.131
+
+DEBUG:root:Epoch 34
+DEBUG:root:Critic training done in epoch 34
+DEBUG:root:Encoder decoder training done in epoch 34
+DEBUG:root:critic x loss -0.060 critic z loss -0.071 
+encoder loss 0.124 decoder loss 0.133
+
+DEBUG:root:Epoch 35
+DEBUG:root:Critic training done in epoch 35
+DEBUG:root:Encoder decoder training done in epoch 35
+DEBUG:root:critic x loss -0.063 critic z loss -0.076 
+encoder loss 0.128 decoder loss 0.143
+
+DEBUG:root:Epoch 36
+DEBUG:root:Critic training done in epoch 36
+DEBUG:root:Encoder decoder training done in epoch 36
+DEBUG:root:critic x loss -0.066 critic z loss -0.080 
+encoder loss 0.132 decoder loss 0.147
+
+DEBUG:root:Epoch 37
+DEBUG:root:Critic training done in epoch 37
+DEBUG:root:Encoder decoder training done in epoch 37
+DEBUG:root:critic x loss -0.069 critic z loss -0.085 
+encoder loss 0.136 decoder loss 0.148
+
+DEBUG:root:Epoch 38
+DEBUG:root:Critic training done in epoch 38
+DEBUG:root:Encoder decoder training done in epoch 38
+DEBUG:root:critic x loss -0.072 critic z loss -0.088 
+encoder loss 0.140 decoder loss 0.153
+
+DEBUG:root:Epoch 39
+DEBUG:root:Critic training done in epoch 39
+DEBUG:root:Encoder decoder training done in epoch 39
+DEBUG:root:critic x loss -0.075 critic z loss -0.093 
+encoder loss 0.145 decoder loss 0.156
+
+DEBUG:root:Epoch 40
+DEBUG:root:Critic training done in epoch 40
+DEBUG:root:Encoder decoder training done in epoch 40
+DEBUG:root:critic x loss -0.078 critic z loss -0.095 
+encoder loss 0.148 decoder loss 0.164
+
+DEBUG:root:Epoch 41
+DEBUG:root:Critic training done in epoch 41
+DEBUG:root:Encoder decoder training done in epoch 41
+DEBUG:root:critic x loss -0.081 critic z loss -0.102 
+encoder loss 0.152 decoder loss 0.166
+
+DEBUG:root:Epoch 42
+DEBUG:root:Critic training done in epoch 42
+DEBUG:root:Encoder decoder training done in epoch 42
+DEBUG:root:critic x loss -0.084 critic z loss -0.104 
+encoder loss 0.156 decoder loss 0.170
+
+DEBUG:root:Epoch 43
+DEBUG:root:Critic training done in epoch 43
+DEBUG:root:Encoder decoder training done in epoch 43
+DEBUG:root:critic x loss -0.087 critic z loss -0.109 
+encoder loss 0.160 decoder loss 0.173
+
+DEBUG:root:Epoch 44
+DEBUG:root:Critic training done in epoch 44
+DEBUG:root:Encoder decoder training done in epoch 44
+DEBUG:root:critic x loss -0.090 critic z loss -0.113 
+encoder loss 0.164 decoder loss 0.178
+
+DEBUG:root:Epoch 45
+DEBUG:root:Critic training done in epoch 45
+DEBUG:root:Encoder decoder training done in epoch 45
+DEBUG:root:critic x loss -0.092 critic z loss -0.118 
+encoder loss 0.168 decoder loss 0.184
+
+DEBUG:root:Epoch 46
+DEBUG:root:Critic training done in epoch 46
+DEBUG:root:Encoder decoder training done in epoch 46
+DEBUG:root:critic x loss -0.095 critic z loss -0.121 
+encoder loss 0.172 decoder loss 0.187
+
+DEBUG:root:Epoch 47
+DEBUG:root:Critic training done in epoch 47
+DEBUG:root:Encoder decoder training done in epoch 47
+DEBUG:root:critic x loss -0.098 critic z loss -0.126 
+encoder loss 0.175 decoder loss 0.194
+
+DEBUG:root:Epoch 48
+DEBUG:root:Critic training done in epoch 48
+DEBUG:root:Encoder decoder training done in epoch 48
+DEBUG:root:critic x loss -0.100 critic z loss -0.131 
+encoder loss 0.179 decoder loss 0.195
+
+DEBUG:root:Epoch 49
+DEBUG:root:Critic training done in epoch 49
+DEBUG:root:Encoder decoder training done in epoch 49
+DEBUG:root:critic x loss -0.103 critic z loss -0.137 
+encoder loss 0.183 decoder loss 0.201
+
+DEBUG:root:Epoch 50
+DEBUG:root:Critic training done in epoch 50
+DEBUG:root:Encoder decoder training done in epoch 50
+DEBUG:root:critic x loss -0.105 critic z loss -0.139 
+encoder loss 0.187 decoder loss 0.202
+
+DEBUG:root:Epoch 51
+DEBUG:root:Critic training done in epoch 51
+DEBUG:root:Encoder decoder training done in epoch 51
+DEBUG:root:critic x loss -0.108 critic z loss -0.144 
+encoder loss 0.190 decoder loss 0.208
+
+DEBUG:root:Epoch 52
+DEBUG:root:Critic training done in epoch 52
+DEBUG:root:Encoder decoder training done in epoch 52
+DEBUG:root:critic x loss -0.110 critic z loss -0.148 
+encoder loss 0.194 decoder loss 0.213
+
+DEBUG:root:Epoch 53
+DEBUG:root:Critic training done in epoch 53
+DEBUG:root:Encoder decoder training done in epoch 53
+DEBUG:root:critic x loss -0.113 critic z loss -0.151 
+encoder loss 0.198 decoder loss 0.219
+
+DEBUG:root:Epoch 54
+DEBUG:root:Critic training done in epoch 54
+DEBUG:root:Encoder decoder training done in epoch 54
+DEBUG:root:critic x loss -0.115 critic z loss -0.155 
+encoder loss 0.201 decoder loss 0.221
+
+DEBUG:root:Epoch 55
+DEBUG:root:Critic training done in epoch 55
+DEBUG:root:Encoder decoder training done in epoch 55
+DEBUG:root:critic x loss -0.117 critic z loss -0.159 
+encoder loss 0.205 decoder loss 0.226
+
+DEBUG:root:Epoch 56
+DEBUG:root:Critic training done in epoch 56
+DEBUG:root:Encoder decoder training done in epoch 56
+DEBUG:root:critic x loss -0.119 critic z loss -0.165 
+encoder loss 0.208 decoder loss 0.229
+
+DEBUG:root:Epoch 57
+DEBUG:root:Critic training done in epoch 57
+DEBUG:root:Encoder decoder training done in epoch 57
+DEBUG:root:critic x loss -0.122 critic z loss -0.171 
+encoder loss 0.212 decoder loss 0.234
+
+DEBUG:root:Epoch 58
+DEBUG:root:Critic training done in epoch 58
+DEBUG:root:Encoder decoder training done in epoch 58
+DEBUG:root:critic x loss -0.124 critic z loss -0.173 
+encoder loss 0.215 decoder loss 0.239
+
+DEBUG:root:Epoch 59
+DEBUG:root:Critic training done in epoch 59
+DEBUG:root:Encoder decoder training done in epoch 59
+DEBUG:root:critic x loss -0.126 critic z loss -0.177 
+encoder loss 0.219 decoder loss 0.242
+
+DEBUG:root:Epoch 60
+DEBUG:root:Critic training done in epoch 60
+DEBUG:root:Encoder decoder training done in epoch 60
+DEBUG:root:critic x loss -0.128 critic z loss -0.183 
+encoder loss 0.222 decoder loss 0.246
+
+DEBUG:root:Epoch 61
+DEBUG:root:Critic training done in epoch 61
+DEBUG:root:Encoder decoder training done in epoch 61
+DEBUG:root:critic x loss -0.130 critic z loss -0.185 
+encoder loss 0.226 decoder loss 0.253
+
+DEBUG:root:Epoch 62
+DEBUG:root:Critic training done in epoch 62
+DEBUG:root:Encoder decoder training done in epoch 62
+DEBUG:root:critic x loss -0.132 critic z loss -0.191 
+encoder loss 0.229 decoder loss 0.257
+
+DEBUG:root:Epoch 63
+DEBUG:root:Critic training done in epoch 63
+DEBUG:root:Encoder decoder training done in epoch 63
+DEBUG:root:critic x loss -0.134 critic z loss -0.194 
+encoder loss 0.232 decoder loss 0.262
+
+DEBUG:root:Epoch 64
+DEBUG:root:Critic training done in epoch 64
+DEBUG:root:Encoder decoder training done in epoch 64
+DEBUG:root:critic x loss -0.136 critic z loss -0.200 
+encoder loss 0.236 decoder loss 0.264
+
+DEBUG:root:Epoch 65
+DEBUG:root:Critic training done in epoch 65
+DEBUG:root:Encoder decoder training done in epoch 65
+DEBUG:root:critic x loss -0.138 critic z loss -0.203 
+encoder loss 0.239 decoder loss 0.267
+
+DEBUG:root:Epoch 66
+DEBUG:root:Critic training done in epoch 66
+DEBUG:root:Encoder decoder training done in epoch 66
+DEBUG:root:critic x loss -0.140 critic z loss -0.207 
+encoder loss 0.242 decoder loss 0.273
+
+DEBUG:root:Epoch 67
+DEBUG:root:Critic training done in epoch 67
+DEBUG:root:Encoder decoder training done in epoch 67
+DEBUG:root:critic x loss -0.141 critic z loss -0.212 
+encoder loss 0.245 decoder loss 0.275
+
+DEBUG:root:Epoch 68
+DEBUG:root:Critic training done in epoch 68
+DEBUG:root:Encoder decoder training done in epoch 68
+DEBUG:root:critic x loss -0.143 critic z loss -0.215 
+encoder loss 0.248 decoder loss 0.282
+
+DEBUG:root:Epoch 69
+DEBUG:root:Critic training done in epoch 69
+DEBUG:root:Encoder decoder training done in epoch 69
+DEBUG:root:critic x loss -0.145 critic z loss -0.221 
+encoder loss 0.251 decoder loss 0.286
+
+DEBUG:root:Epoch 70
+DEBUG:root:Critic training done in epoch 70
+DEBUG:root:Encoder decoder training done in epoch 70
+DEBUG:root:critic x loss -0.147 critic z loss -0.224 
+encoder loss 0.255 decoder loss 0.290
+
+DEBUG:root:Epoch 71
+DEBUG:root:Critic training done in epoch 71
+DEBUG:root:Encoder decoder training done in epoch 71
+DEBUG:root:critic x loss -0.148 critic z loss -0.230 
+encoder loss 0.258 decoder loss 0.295
+
+DEBUG:root:Epoch 72
+DEBUG:root:Critic training done in epoch 72
+DEBUG:root:Encoder decoder training done in epoch 72
+DEBUG:root:critic x loss -0.150 critic z loss -0.234 
+encoder loss 0.261 decoder loss 0.301
+
+DEBUG:root:Epoch 73
+DEBUG:root:Critic training done in epoch 73
+DEBUG:root:Encoder decoder training done in epoch 73
+DEBUG:root:critic x loss -0.151 critic z loss -0.237 
+encoder loss 0.264 decoder loss 0.304
+
+DEBUG:root:Epoch 74
+DEBUG:root:Critic training done in epoch 74
+DEBUG:root:Encoder decoder training done in epoch 74
+DEBUG:root:critic x loss -0.153 critic z loss -0.242 
+encoder loss 0.266 decoder loss 0.309
+
+DEBUG:root:Epoch 75
+DEBUG:root:Critic training done in epoch 75
+DEBUG:root:Encoder decoder training done in epoch 75
+DEBUG:root:critic x loss -0.154 critic z loss -0.245 
+encoder loss 0.269 decoder loss 0.310
+
+DEBUG:root:Epoch 76
+DEBUG:root:Critic training done in epoch 76
+DEBUG:root:Encoder decoder training done in epoch 76
+DEBUG:root:critic x loss -0.155 critic z loss -0.252 
+encoder loss 0.272 decoder loss 0.317
+
+DEBUG:root:Epoch 77
+DEBUG:root:Critic training done in epoch 77
+DEBUG:root:Encoder decoder training done in epoch 77
+DEBUG:root:critic x loss -0.157 critic z loss -0.256 
+encoder loss 0.275 decoder loss 0.320
+
+DEBUG:root:Epoch 78
+DEBUG:root:Critic training done in epoch 78
+DEBUG:root:Encoder decoder training done in epoch 78
+DEBUG:root:critic x loss -0.158 critic z loss -0.259 
+encoder loss 0.278 decoder loss 0.326
+
+DEBUG:root:Epoch 79
+DEBUG:root:Critic training done in epoch 79
+DEBUG:root:Encoder decoder training done in epoch 79
+DEBUG:root:critic x loss -0.159 critic z loss -0.264 
+encoder loss 0.280 decoder loss 0.329
+
+DEBUG:root:Epoch 80
+DEBUG:root:Critic training done in epoch 80
+DEBUG:root:Encoder decoder training done in epoch 80
+DEBUG:root:critic x loss -0.160 critic z loss -0.267 
+encoder loss 0.283 decoder loss 0.335
+
+DEBUG:root:Epoch 81
+DEBUG:root:Critic training done in epoch 81
+DEBUG:root:Encoder decoder training done in epoch 81
+DEBUG:root:critic x loss -0.161 critic z loss -0.271 
+encoder loss 0.286 decoder loss 0.335
+
+DEBUG:root:Epoch 82
+DEBUG:root:Critic training done in epoch 82
+DEBUG:root:Encoder decoder training done in epoch 82
+DEBUG:root:critic x loss -0.162 critic z loss -0.278 
+encoder loss 0.288 decoder loss 0.343
+
+DEBUG:root:Epoch 83
+DEBUG:root:Critic training done in epoch 83
+DEBUG:root:Encoder decoder training done in epoch 83
+DEBUG:root:critic x loss -0.163 critic z loss -0.280 
+encoder loss 0.290 decoder loss 0.347
+
+DEBUG:root:Epoch 84
+DEBUG:root:Critic training done in epoch 84
+DEBUG:root:Encoder decoder training done in epoch 84
+DEBUG:root:critic x loss -0.164 critic z loss -0.287 
+encoder loss 0.293 decoder loss 0.350
+
+DEBUG:root:Epoch 85
+DEBUG:root:Critic training done in epoch 85
+DEBUG:root:Encoder decoder training done in epoch 85
+DEBUG:root:critic x loss -0.165 critic z loss -0.290 
+encoder loss 0.295 decoder loss 0.356
+
+DEBUG:root:Epoch 86
+DEBUG:root:Critic training done in epoch 86
+DEBUG:root:Encoder decoder training done in epoch 86
+DEBUG:root:critic x loss -0.166 critic z loss -0.292 
+encoder loss 0.297 decoder loss 0.360
+
+DEBUG:root:Epoch 87
+DEBUG:root:Critic training done in epoch 87
+DEBUG:root:Encoder decoder training done in epoch 87
+DEBUG:root:critic x loss -0.166 critic z loss -0.299 
+encoder loss 0.299 decoder loss 0.364
+
+DEBUG:root:Epoch 88
+DEBUG:root:Critic training done in epoch 88
+DEBUG:root:Encoder decoder training done in epoch 88
+DEBUG:root:critic x loss -0.167 critic z loss -0.302 
+encoder loss 0.302 decoder loss 0.368
+
+DEBUG:root:Epoch 89
+DEBUG:root:Critic training done in epoch 89
+DEBUG:root:Encoder decoder training done in epoch 89
+DEBUG:root:critic x loss -0.167 critic z loss -0.307 
+encoder loss 0.303 decoder loss 0.373
+
+DEBUG:root:Epoch 90
+DEBUG:root:Critic training done in epoch 90
+DEBUG:root:Encoder decoder training done in epoch 90
+DEBUG:root:critic x loss -0.168 critic z loss -0.311 
+encoder loss 0.306 decoder loss 0.378
+
+DEBUG:root:Epoch 91
+DEBUG:root:Critic training done in epoch 91
+DEBUG:root:Encoder decoder training done in epoch 91
+DEBUG:root:critic x loss -0.168 critic z loss -0.317 
+encoder loss 0.307 decoder loss 0.380
+
+DEBUG:root:Epoch 92
+DEBUG:root:Critic training done in epoch 92
+DEBUG:root:Encoder decoder training done in epoch 92
+DEBUG:root:critic x loss -0.168 critic z loss -0.320 
+encoder loss 0.309 decoder loss 0.387
+
+DEBUG:root:Epoch 93
+DEBUG:root:Critic training done in epoch 93
+DEBUG:root:Encoder decoder training done in epoch 93
+DEBUG:root:critic x loss -0.168 critic z loss -0.324 
+encoder loss 0.311 decoder loss 0.391
+
+DEBUG:root:Epoch 94
+DEBUG:root:Critic training done in epoch 94
+DEBUG:root:Encoder decoder training done in epoch 94
+DEBUG:root:critic x loss -0.168 critic z loss -0.330 
+encoder loss 0.313 decoder loss 0.395
+
+DEBUG:root:Epoch 95
+DEBUG:root:Critic training done in epoch 95
+DEBUG:root:Encoder decoder training done in epoch 95
+DEBUG:root:critic x loss -0.168 critic z loss -0.334 
+encoder loss 0.314 decoder loss 0.400
+
+DEBUG:root:Epoch 96
+DEBUG:root:Critic training done in epoch 96
+DEBUG:root:Encoder decoder training done in epoch 96
+DEBUG:root:critic x loss -0.168 critic z loss -0.338 
+encoder loss 0.316 decoder loss 0.407
+
+DEBUG:root:Epoch 97
+DEBUG:root:Critic training done in epoch 97
+DEBUG:root:Encoder decoder training done in epoch 97
+DEBUG:root:critic x loss -0.168 critic z loss -0.342 
+encoder loss 0.317 decoder loss 0.408
+
+DEBUG:root:Epoch 98
+DEBUG:root:Critic training done in epoch 98
+DEBUG:root:Encoder decoder training done in epoch 98
+DEBUG:root:critic x loss -0.168 critic z loss -0.347 
+encoder loss 0.319 decoder loss 0.413
+
+DEBUG:root:Epoch 99
+DEBUG:root:Critic training done in epoch 99
+DEBUG:root:Encoder decoder training done in epoch 99
+DEBUG:root:critic x loss -0.168 critic z loss -0.351 
+encoder loss 0.320 decoder loss 0.419
+
+INFO:root:Number of train datapoints is 5592
+INFO:root:Number of samples in train dataset 5592
+DEBUG:root:Starting training
+DEBUG:root:Epoch 0
+DEBUG:root:Critic training done in epoch 0
+DEBUG:root:Encoder decoder training done in epoch 0
+DEBUG:root:critic x loss 0.027 critic z loss -0.269 
+encoder loss 0.033 decoder loss 0.350
+
+DEBUG:root:Epoch 1
+DEBUG:root:Critic training done in epoch 1
+DEBUG:root:Encoder decoder training done in epoch 1
+DEBUG:root:critic x loss 0.021 critic z loss -0.273 
+encoder loss 0.039 decoder loss 0.354
+
+DEBUG:root:Epoch 2
+DEBUG:root:Critic training done in epoch 2
+DEBUG:root:Encoder decoder training done in epoch 2
+DEBUG:root:critic x loss 0.014 critic z loss -0.277 
+encoder loss 0.046 decoder loss 0.362
+
+DEBUG:root:Epoch 3
+DEBUG:root:Critic training done in epoch 3
+DEBUG:root:Encoder decoder training done in epoch 3
+DEBUG:root:critic x loss 0.008 critic z loss -0.281 
+encoder loss 0.052 decoder loss 0.364
+
+DEBUG:root:Epoch 4
+DEBUG:root:Critic training done in epoch 4
+DEBUG:root:Encoder decoder training done in epoch 4
+DEBUG:root:critic x loss 0.002 critic z loss -0.286 
+encoder loss 0.058 decoder loss 0.366
+
+DEBUG:root:Epoch 5
+DEBUG:root:Critic training done in epoch 5
+DEBUG:root:Encoder decoder training done in epoch 5
+DEBUG:root:critic x loss -0.004 critic z loss -0.290 
+encoder loss 0.065 decoder loss 0.372
+
+DEBUG:root:Epoch 6
+DEBUG:root:Critic training done in epoch 6
+DEBUG:root:Encoder decoder training done in epoch 6
+DEBUG:root:critic x loss -0.010 critic z loss -0.291 
+encoder loss 0.071 decoder loss 0.375
+
+DEBUG:root:Epoch 7
+DEBUG:root:Critic training done in epoch 7
+DEBUG:root:Encoder decoder training done in epoch 7
+DEBUG:root:critic x loss -0.015 critic z loss -0.295 
+encoder loss 0.077 decoder loss 0.375
+
+DEBUG:root:Epoch 8
+DEBUG:root:Critic training done in epoch 8
+DEBUG:root:Encoder decoder training done in epoch 8
+DEBUG:root:critic x loss -0.021 critic z loss -0.300 
+encoder loss 0.084 decoder loss 0.384
+
+DEBUG:root:Epoch 9
+DEBUG:root:Critic training done in epoch 9
+DEBUG:root:Encoder decoder training done in epoch 9
+DEBUG:root:critic x loss -0.027 critic z loss -0.302 
+encoder loss 0.090 decoder loss 0.390
+
+DEBUG:root:Epoch 10
+DEBUG:root:Critic training done in epoch 10
+DEBUG:root:Encoder decoder training done in epoch 10
+DEBUG:root:critic x loss -0.032 critic z loss -0.307 
+encoder loss 0.096 decoder loss 0.391
+
+DEBUG:root:Epoch 11
+DEBUG:root:Critic training done in epoch 11
+DEBUG:root:Encoder decoder training done in epoch 11
+DEBUG:root:critic x loss -0.038 critic z loss -0.312 
+encoder loss 0.102 decoder loss 0.395
+
+DEBUG:root:Epoch 12
+DEBUG:root:Critic training done in epoch 12
+DEBUG:root:Encoder decoder training done in epoch 12
+DEBUG:root:critic x loss -0.043 critic z loss -0.313 
+encoder loss 0.108 decoder loss 0.401
+
+DEBUG:root:Epoch 13
+DEBUG:root:Critic training done in epoch 13
+DEBUG:root:Encoder decoder training done in epoch 13
+DEBUG:root:critic x loss -0.049 critic z loss -0.317 
+encoder loss 0.114 decoder loss 0.403
+
+DEBUG:root:Epoch 14
+DEBUG:root:Critic training done in epoch 14
+DEBUG:root:Encoder decoder training done in epoch 14
+DEBUG:root:critic x loss -0.054 critic z loss -0.323 
+encoder loss 0.120 decoder loss 0.404
+
+DEBUG:root:Epoch 15
+DEBUG:root:Critic training done in epoch 15
+DEBUG:root:Encoder decoder training done in epoch 15
+DEBUG:root:critic x loss -0.059 critic z loss -0.327 
+encoder loss 0.126 decoder loss 0.409
+
+DEBUG:root:Epoch 16
+DEBUG:root:Critic training done in epoch 16
+DEBUG:root:Encoder decoder training done in epoch 16
+DEBUG:root:critic x loss -0.064 critic z loss -0.330 
+encoder loss 0.132 decoder loss 0.413
+
+DEBUG:root:Epoch 17
+DEBUG:root:Critic training done in epoch 17
+DEBUG:root:Encoder decoder training done in epoch 17
+DEBUG:root:critic x loss -0.070 critic z loss -0.332 
+encoder loss 0.138 decoder loss 0.420
+
+DEBUG:root:Epoch 18
+DEBUG:root:Critic training done in epoch 18
+DEBUG:root:Encoder decoder training done in epoch 18
+DEBUG:root:critic x loss -0.075 critic z loss -0.338 
+encoder loss 0.144 decoder loss 0.422
+
+DEBUG:root:Epoch 19
+DEBUG:root:Critic training done in epoch 19
+DEBUG:root:Encoder decoder training done in epoch 19
+DEBUG:root:critic x loss -0.080 critic z loss -0.343 
+encoder loss 0.150 decoder loss 0.429
+
+DEBUG:root:Epoch 20
+DEBUG:root:Critic training done in epoch 20
+DEBUG:root:Encoder decoder training done in epoch 20
+DEBUG:root:critic x loss -0.085 critic z loss -0.344 
+encoder loss 0.156 decoder loss 0.428
+
+DEBUG:root:Epoch 21
+DEBUG:root:Critic training done in epoch 21
+DEBUG:root:Encoder decoder training done in epoch 21
+DEBUG:root:critic x loss -0.089 critic z loss -0.348 
+encoder loss 0.161 decoder loss 0.430
+
+DEBUG:root:Epoch 22
+DEBUG:root:Critic training done in epoch 22
+DEBUG:root:Encoder decoder training done in epoch 22
+DEBUG:root:critic x loss -0.094 critic z loss -0.352 
+encoder loss 0.167 decoder loss 0.433
+
+DEBUG:root:Epoch 23
+DEBUG:root:Critic training done in epoch 23
+DEBUG:root:Encoder decoder training done in epoch 23
+DEBUG:root:critic x loss -0.099 critic z loss -0.356 
+encoder loss 0.173 decoder loss 0.437
+
+DEBUG:root:Epoch 24
+DEBUG:root:Critic training done in epoch 24
+DEBUG:root:Encoder decoder training done in epoch 24
+DEBUG:root:critic x loss -0.104 critic z loss -0.359 
+encoder loss 0.179 decoder loss 0.442
+
+DEBUG:root:Epoch 25
+DEBUG:root:Critic training done in epoch 25
+DEBUG:root:Encoder decoder training done in epoch 25
+DEBUG:root:critic x loss -0.108 critic z loss -0.364 
+encoder loss 0.184 decoder loss 0.446
+
+DEBUG:root:Epoch 26
+DEBUG:root:Critic training done in epoch 26
+DEBUG:root:Encoder decoder training done in epoch 26
+DEBUG:root:critic x loss -0.113 critic z loss -0.367 
+encoder loss 0.190 decoder loss 0.450
+
+DEBUG:root:Epoch 27
+DEBUG:root:Critic training done in epoch 27
+DEBUG:root:Encoder decoder training done in epoch 27
+DEBUG:root:critic x loss -0.117 critic z loss -0.372 
+encoder loss 0.195 decoder loss 0.455
+
+DEBUG:root:Epoch 28
+DEBUG:root:Critic training done in epoch 28
+DEBUG:root:Encoder decoder training done in epoch 28
+DEBUG:root:critic x loss -0.122 critic z loss -0.376 
+encoder loss 0.201 decoder loss 0.459
+
+DEBUG:root:Epoch 29
+DEBUG:root:Critic training done in epoch 29
+DEBUG:root:Encoder decoder training done in epoch 29
+DEBUG:root:critic x loss -0.126 critic z loss -0.380 
+encoder loss 0.206 decoder loss 0.464
+
+DEBUG:root:Epoch 30
+DEBUG:root:Critic training done in epoch 30
+DEBUG:root:Encoder decoder training done in epoch 30
+DEBUG:root:critic x loss -0.130 critic z loss -0.384 
+encoder loss 0.212 decoder loss 0.469
+
+DEBUG:root:Epoch 31
+DEBUG:root:Critic training done in epoch 31
+DEBUG:root:Encoder decoder training done in epoch 31
+DEBUG:root:critic x loss -0.135 critic z loss -0.387 
+encoder loss 0.218 decoder loss 0.474
+
+DEBUG:root:Epoch 32
+DEBUG:root:Critic training done in epoch 32
+DEBUG:root:Encoder decoder training done in epoch 32
+DEBUG:root:critic x loss -0.139 critic z loss -0.393 
+encoder loss 0.223 decoder loss 0.473
+
+DEBUG:root:Epoch 33
+DEBUG:root:Critic training done in epoch 33
+DEBUG:root:Encoder decoder training done in epoch 33
+DEBUG:root:critic x loss -0.143 critic z loss -0.396 
+encoder loss 0.229 decoder loss 0.480
+
+DEBUG:root:Epoch 34
+DEBUG:root:Critic training done in epoch 34
+DEBUG:root:Encoder decoder training done in epoch 34
+DEBUG:root:critic x loss -0.147 critic z loss -0.398 
+encoder loss 0.234 decoder loss 0.482
+
+DEBUG:root:Epoch 35
+DEBUG:root:Critic training done in epoch 35
+DEBUG:root:Encoder decoder training done in epoch 35
+DEBUG:root:critic x loss -0.152 critic z loss -0.402 
+encoder loss 0.240 decoder loss 0.491
+
+DEBUG:root:Epoch 36
+DEBUG:root:Critic training done in epoch 36
+DEBUG:root:Encoder decoder training done in epoch 36
+DEBUG:root:critic x loss -0.156 critic z loss -0.407 
+encoder loss 0.245 decoder loss 0.495
+
+DEBUG:root:Epoch 37
+DEBUG:root:Critic training done in epoch 37
+DEBUG:root:Encoder decoder training done in epoch 37
+DEBUG:root:critic x loss -0.160 critic z loss -0.410 
+encoder loss 0.250 decoder loss 0.499
+
+DEBUG:root:Epoch 38
+DEBUG:root:Critic training done in epoch 38
+DEBUG:root:Encoder decoder training done in epoch 38
+DEBUG:root:critic x loss -0.164 critic z loss -0.413 
+encoder loss 0.256 decoder loss 0.494
+
+DEBUG:root:Epoch 39
+DEBUG:root:Critic training done in epoch 39
+DEBUG:root:Encoder decoder training done in epoch 39
+DEBUG:root:critic x loss -0.168 critic z loss -0.419 
+encoder loss 0.261 decoder loss 0.505
+
+DEBUG:root:Epoch 40
+DEBUG:root:Critic training done in epoch 40
+DEBUG:root:Encoder decoder training done in epoch 40
+DEBUG:root:critic x loss -0.172 critic z loss -0.421 
+encoder loss 0.266 decoder loss 0.504
+
+DEBUG:root:Epoch 41
+DEBUG:root:Critic training done in epoch 41
+DEBUG:root:Encoder decoder training done in epoch 41
+DEBUG:root:critic x loss -0.175 critic z loss -0.425 
+encoder loss 0.272 decoder loss 0.510
+
+DEBUG:root:Epoch 42
+DEBUG:root:Critic training done in epoch 42
+DEBUG:root:Encoder decoder training done in epoch 42
+DEBUG:root:critic x loss -0.179 critic z loss -0.429 
+encoder loss 0.277 decoder loss 0.519
+
+DEBUG:root:Epoch 43
+DEBUG:root:Critic training done in epoch 43
+DEBUG:root:Encoder decoder training done in epoch 43
+DEBUG:root:critic x loss -0.183 critic z loss -0.433 
+encoder loss 0.282 decoder loss 0.522
+
+DEBUG:root:Epoch 44
+DEBUG:root:Critic training done in epoch 44
+DEBUG:root:Encoder decoder training done in epoch 44
+DEBUG:root:critic x loss -0.186 critic z loss -0.436 
+encoder loss 0.287 decoder loss 0.516
+
+DEBUG:root:Epoch 45
+DEBUG:root:Critic training done in epoch 45
+DEBUG:root:Encoder decoder training done in epoch 45
+DEBUG:root:critic x loss -0.190 critic z loss -0.441 
+encoder loss 0.292 decoder loss 0.524
+
+DEBUG:root:Epoch 46
+DEBUG:root:Critic training done in epoch 46
+DEBUG:root:Encoder decoder training done in epoch 46
+DEBUG:root:critic x loss -0.193 critic z loss -0.444 
+encoder loss 0.297 decoder loss 0.534
+
+DEBUG:root:Epoch 47
+DEBUG:root:Critic training done in epoch 47
+DEBUG:root:Encoder decoder training done in epoch 47
+DEBUG:root:critic x loss -0.197 critic z loss -0.449 
+encoder loss 0.302 decoder loss 0.538
+
+DEBUG:root:Epoch 48
+DEBUG:root:Critic training done in epoch 48
+DEBUG:root:Encoder decoder training done in epoch 48
+DEBUG:root:critic x loss -0.200 critic z loss -0.451 
+encoder loss 0.306 decoder loss 0.538
+
+DEBUG:root:Epoch 49
+DEBUG:root:Critic training done in epoch 49
+DEBUG:root:Encoder decoder training done in epoch 49
+DEBUG:root:critic x loss -0.203 critic z loss -0.455 
+encoder loss 0.311 decoder loss 0.544
+
+DEBUG:root:Epoch 50
+DEBUG:root:Critic training done in epoch 50
+DEBUG:root:Encoder decoder training done in epoch 50
+DEBUG:root:critic x loss -0.206 critic z loss -0.459 
+encoder loss 0.316 decoder loss 0.551
+
+DEBUG:root:Epoch 51
+DEBUG:root:Critic training done in epoch 51
+DEBUG:root:Encoder decoder training done in epoch 51
+DEBUG:root:critic x loss -0.209 critic z loss -0.462 
+encoder loss 0.320 decoder loss 0.548
+
+DEBUG:root:Epoch 52
+DEBUG:root:Critic training done in epoch 52
+DEBUG:root:Encoder decoder training done in epoch 52
+DEBUG:root:critic x loss -0.212 critic z loss -0.466 
+encoder loss 0.325 decoder loss 0.553
+
+DEBUG:root:Epoch 53
+DEBUG:root:Critic training done in epoch 53
+DEBUG:root:Encoder decoder training done in epoch 53
+DEBUG:root:critic x loss -0.215 critic z loss -0.468 
+encoder loss 0.329 decoder loss 0.559
+
+DEBUG:root:Epoch 54
+DEBUG:root:Critic training done in epoch 54
+DEBUG:root:Encoder decoder training done in epoch 54
+DEBUG:root:critic x loss -0.218 critic z loss -0.474 
+encoder loss 0.333 decoder loss 0.557
+
+DEBUG:root:Epoch 55
+DEBUG:root:Critic training done in epoch 55
+DEBUG:root:Encoder decoder training done in epoch 55
+DEBUG:root:critic x loss -0.221 critic z loss -0.477 
+encoder loss 0.338 decoder loss 0.560
+
+DEBUG:root:Epoch 56
+DEBUG:root:Critic training done in epoch 56
+DEBUG:root:Encoder decoder training done in epoch 56
+DEBUG:root:critic x loss -0.223 critic z loss -0.480 
+encoder loss 0.342 decoder loss 0.567
+
+DEBUG:root:Epoch 57
+DEBUG:root:Critic training done in epoch 57
+DEBUG:root:Encoder decoder training done in epoch 57
+DEBUG:root:critic x loss -0.226 critic z loss -0.487 
+encoder loss 0.346 decoder loss 0.575
+
+DEBUG:root:Epoch 58
+DEBUG:root:Critic training done in epoch 58
+DEBUG:root:Encoder decoder training done in epoch 58
+DEBUG:root:critic x loss -0.229 critic z loss -0.489 
+encoder loss 0.350 decoder loss 0.574
+
+DEBUG:root:Epoch 59
+DEBUG:root:Critic training done in epoch 59
+DEBUG:root:Encoder decoder training done in epoch 59
+DEBUG:root:critic x loss -0.231 critic z loss -0.491 
+encoder loss 0.354 decoder loss 0.573
+
+DEBUG:root:Epoch 60
+DEBUG:root:Critic training done in epoch 60
+DEBUG:root:Encoder decoder training done in epoch 60
+DEBUG:root:critic x loss -0.233 critic z loss -0.496 
+encoder loss 0.358 decoder loss 0.581
+
+DEBUG:root:Epoch 61
+DEBUG:root:Critic training done in epoch 61
+DEBUG:root:Encoder decoder training done in epoch 61
+DEBUG:root:critic x loss -0.236 critic z loss -0.500 
+encoder loss 0.362 decoder loss 0.588
+
+DEBUG:root:Epoch 62
+DEBUG:root:Critic training done in epoch 62
+DEBUG:root:Encoder decoder training done in epoch 62
+DEBUG:root:critic x loss -0.238 critic z loss -0.502 
+encoder loss 0.366 decoder loss 0.587
+
+DEBUG:root:Epoch 63
+DEBUG:root:Critic training done in epoch 63
+DEBUG:root:Encoder decoder training done in epoch 63
+DEBUG:root:critic x loss -0.240 critic z loss -0.506 
+encoder loss 0.369 decoder loss 0.595
+
+DEBUG:root:Epoch 64
+DEBUG:root:Critic training done in epoch 64
+DEBUG:root:Encoder decoder training done in epoch 64
+DEBUG:root:critic x loss -0.242 critic z loss -0.511 
+encoder loss 0.373 decoder loss 0.596
+
+DEBUG:root:Epoch 65
+DEBUG:root:Critic training done in epoch 65
+DEBUG:root:Encoder decoder training done in epoch 65
+DEBUG:root:critic x loss -0.244 critic z loss -0.517 
+encoder loss 0.377 decoder loss 0.602
+
+DEBUG:root:Epoch 66
+DEBUG:root:Critic training done in epoch 66
+DEBUG:root:Encoder decoder training done in epoch 66
+DEBUG:root:critic x loss -0.246 critic z loss -0.519 
+encoder loss 0.380 decoder loss 0.603
+
+DEBUG:root:Epoch 67
+DEBUG:root:Critic training done in epoch 67
+DEBUG:root:Encoder decoder training done in epoch 67
+DEBUG:root:critic x loss -0.248 critic z loss -0.523 
+encoder loss 0.384 decoder loss 0.611
+
+DEBUG:root:Epoch 68
+DEBUG:root:Critic training done in epoch 68
+DEBUG:root:Encoder decoder training done in epoch 68
+DEBUG:root:critic x loss -0.249 critic z loss -0.525 
+encoder loss 0.387 decoder loss 0.614
+
+DEBUG:root:Epoch 69
+DEBUG:root:Critic training done in epoch 69
+DEBUG:root:Encoder decoder training done in epoch 69
+DEBUG:root:critic x loss -0.251 critic z loss -0.530 
+encoder loss 0.390 decoder loss 0.621
+
+DEBUG:root:Epoch 70
+DEBUG:root:Critic training done in epoch 70
+DEBUG:root:Encoder decoder training done in epoch 70
+DEBUG:root:critic x loss -0.252 critic z loss -0.532 
+encoder loss 0.394 decoder loss 0.619
+
+DEBUG:root:Epoch 71
+DEBUG:root:Critic training done in epoch 71
+DEBUG:root:Encoder decoder training done in epoch 71
+DEBUG:root:critic x loss -0.254 critic z loss -0.538 
+encoder loss 0.397 decoder loss 0.626
+
+DEBUG:root:Epoch 72
+DEBUG:root:Critic training done in epoch 72
+DEBUG:root:Encoder decoder training done in epoch 72
+DEBUG:root:critic x loss -0.255 critic z loss -0.539 
+encoder loss 0.400 decoder loss 0.630
+
+DEBUG:root:Epoch 73
+DEBUG:root:Critic training done in epoch 73
+DEBUG:root:Encoder decoder training done in epoch 73
+DEBUG:root:critic x loss -0.256 critic z loss -0.544 
+encoder loss 0.403 decoder loss 0.632
+
+DEBUG:root:Epoch 74
+DEBUG:root:Critic training done in epoch 74
+DEBUG:root:Encoder decoder training done in epoch 74
+DEBUG:root:critic x loss -0.258 critic z loss -0.547 
+encoder loss 0.406 decoder loss 0.633
+
+DEBUG:root:Epoch 75
+DEBUG:root:Critic training done in epoch 75
+DEBUG:root:Encoder decoder training done in epoch 75
+DEBUG:root:critic x loss -0.259 critic z loss -0.553 
+encoder loss 0.409 decoder loss 0.639
+
+DEBUG:root:Epoch 76
+DEBUG:root:Critic training done in epoch 76
+DEBUG:root:Encoder decoder training done in epoch 76
+DEBUG:root:critic x loss -0.260 critic z loss -0.555 
+encoder loss 0.412 decoder loss 0.641
+
+DEBUG:root:Epoch 77
+DEBUG:root:Critic training done in epoch 77
+DEBUG:root:Encoder decoder training done in epoch 77
+DEBUG:root:critic x loss -0.260 critic z loss -0.560 
+encoder loss 0.414 decoder loss 0.642
+
+DEBUG:root:Epoch 78
+DEBUG:root:Critic training done in epoch 78
+DEBUG:root:Encoder decoder training done in epoch 78
+DEBUG:root:critic x loss -0.261 critic z loss -0.562 
+encoder loss 0.417 decoder loss 0.650
+
+DEBUG:root:Epoch 79
+DEBUG:root:Critic training done in epoch 79
+DEBUG:root:Encoder decoder training done in epoch 79
+DEBUG:root:critic x loss -0.262 critic z loss -0.563 
+encoder loss 0.419 decoder loss 0.646
+
+DEBUG:root:Epoch 80
+DEBUG:root:Critic training done in epoch 80
+DEBUG:root:Encoder decoder training done in epoch 80
+DEBUG:root:critic x loss -0.262 critic z loss -0.569 
+encoder loss 0.421 decoder loss 0.655
+
+DEBUG:root:Epoch 81
+DEBUG:root:Critic training done in epoch 81
+DEBUG:root:Encoder decoder training done in epoch 81
+DEBUG:root:critic x loss -0.263 critic z loss -0.571 
+encoder loss 0.423 decoder loss 0.660
+
+DEBUG:root:Epoch 82
+DEBUG:root:Critic training done in epoch 82
+DEBUG:root:Encoder decoder training done in epoch 82
+DEBUG:root:critic x loss -0.263 critic z loss -0.576 
+encoder loss 0.425 decoder loss 0.662
+
+DEBUG:root:Epoch 83
+DEBUG:root:Critic training done in epoch 83
+DEBUG:root:Encoder decoder training done in epoch 83
+DEBUG:root:critic x loss -0.263 critic z loss -0.579 
+encoder loss 0.427 decoder loss 0.667
+
+DEBUG:root:Epoch 84
+DEBUG:root:Critic training done in epoch 84
+DEBUG:root:Encoder decoder training done in epoch 84
+DEBUG:root:critic x loss -0.263 critic z loss -0.582 
+encoder loss 0.429 decoder loss 0.668
+
+DEBUG:root:Epoch 85
+DEBUG:root:Critic training done in epoch 85
+DEBUG:root:Encoder decoder training done in epoch 85
+DEBUG:root:critic x loss -0.263 critic z loss -0.585 
+encoder loss 0.431 decoder loss 0.666
+
+DEBUG:root:Epoch 86
+DEBUG:root:Critic training done in epoch 86
+DEBUG:root:Encoder decoder training done in epoch 86
+DEBUG:root:critic x loss -0.263 critic z loss -0.590 
+encoder loss 0.432 decoder loss 0.678
+
+DEBUG:root:Epoch 87
+DEBUG:root:Critic training done in epoch 87
+DEBUG:root:Encoder decoder training done in epoch 87
+DEBUG:root:critic x loss -0.263 critic z loss -0.592 
+encoder loss 0.434 decoder loss 0.681
+
+DEBUG:root:Epoch 88
+DEBUG:root:Critic training done in epoch 88
+DEBUG:root:Encoder decoder training done in epoch 88
+DEBUG:root:critic x loss -0.262 critic z loss -0.596 
+encoder loss 0.435 decoder loss 0.684
+
+DEBUG:root:Epoch 89
+DEBUG:root:Critic training done in epoch 89
+DEBUG:root:Encoder decoder training done in epoch 89
+DEBUG:root:critic x loss -0.262 critic z loss -0.602 
+encoder loss 0.436 decoder loss 0.688
+
+DEBUG:root:Epoch 90
+DEBUG:root:Critic training done in epoch 90
+DEBUG:root:Encoder decoder training done in epoch 90
+DEBUG:root:critic x loss -0.261 critic z loss -0.603 
+encoder loss 0.437 decoder loss 0.691
+
+DEBUG:root:Epoch 91
+DEBUG:root:Critic training done in epoch 91
+DEBUG:root:Encoder decoder training done in epoch 91
+DEBUG:root:critic x loss -0.260 critic z loss -0.606 
+encoder loss 0.438 decoder loss 0.697
+
+DEBUG:root:Epoch 92
+DEBUG:root:Critic training done in epoch 92
+DEBUG:root:Encoder decoder training done in epoch 92
+DEBUG:root:critic x loss -0.259 critic z loss -0.612 
+encoder loss 0.438 decoder loss 0.703
+
+DEBUG:root:Epoch 93
+DEBUG:root:Critic training done in epoch 93
+DEBUG:root:Encoder decoder training done in epoch 93
+DEBUG:root:critic x loss -0.258 critic z loss -0.615 
+encoder loss 0.439 decoder loss 0.709
+
+DEBUG:root:Epoch 94
+DEBUG:root:Critic training done in epoch 94
+DEBUG:root:Encoder decoder training done in epoch 94
+DEBUG:root:critic x loss -0.256 critic z loss -0.618 
+encoder loss 0.439 decoder loss 0.704
+
+DEBUG:root:Epoch 95
+DEBUG:root:Critic training done in epoch 95
+DEBUG:root:Encoder decoder training done in epoch 95
+DEBUG:root:critic x loss -0.255 critic z loss -0.621 
+encoder loss 0.440 decoder loss 0.709
+
+DEBUG:root:Epoch 96
+DEBUG:root:Critic training done in epoch 96
+DEBUG:root:Encoder decoder training done in epoch 96
+DEBUG:root:critic x loss -0.253 critic z loss -0.625 
+encoder loss 0.439 decoder loss 0.716
+
+DEBUG:root:Epoch 97
+DEBUG:root:Critic training done in epoch 97
+DEBUG:root:Encoder decoder training done in epoch 97
+DEBUG:root:critic x loss -0.251 critic z loss -0.629 
+encoder loss 0.439 decoder loss 0.717
+
+DEBUG:root:Epoch 98
+DEBUG:root:Critic training done in epoch 98
+DEBUG:root:Encoder decoder training done in epoch 98
+DEBUG:root:critic x loss -0.249 critic z loss -0.634 
+encoder loss 0.439 decoder loss 0.719
+
+DEBUG:root:Epoch 99
+DEBUG:root:Critic training done in epoch 99
+DEBUG:root:Encoder decoder training done in epoch 99
+DEBUG:root:critic x loss -0.247 critic z loss -0.638 
+encoder loss 0.439 decoder loss 0.719
+
