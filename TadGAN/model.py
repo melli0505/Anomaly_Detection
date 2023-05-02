@@ -12,7 +12,9 @@ from torch.autograd import Variable
 from torch.utils.data import Dataset, DataLoader
 
 class Encoder(nn.Module):
-
+    """ 
+    Generate latent space from time series data. Generator E
+    """
     def __init__(self, encoder_path, signal_shape=100):
         super(Encoder, self).__init__()
         self.signal_shape = signal_shape
@@ -21,12 +23,15 @@ class Encoder(nn.Module):
         self.encoder_path = encoder_path
 
     def forward(self, x):
-        x = x.view(1, 64, self.signal_shape).float()
+        x = x.view(1, 64, self.signal_shape).float().to(torch.device('cuda:0'))
         x, (hn, cn) = self.lstm(x)
         x = self.dense(x)
         return (x)
 
 class Decoder(nn.Module):
+    """
+    Generate time series data from latent space. Generator G
+    """
     def __init__(self, decoder_path, signal_shape=100):
         super(Decoder, self).__init__()
         self.signal_shape = signal_shape
@@ -37,9 +42,12 @@ class Decoder(nn.Module):
     def forward(self, x):
         x, (hn, cn) = self.lstm(x)
         x = self.dense(x)
-        return (x)
+        return (x) 
 
 class CriticX(nn.Module):
+    """
+    Compare original time series data and random time series data and Detect which one is original data.
+    """
     def __init__(self, critic_x_path, signal_shape=100):
         super(CriticX, self).__init__()
         self.signal_shape = signal_shape
@@ -48,7 +56,7 @@ class CriticX(nn.Module):
         self.critic_x_path = critic_x_path
 
     def forward(self, x):
-        x = x.view(1, 64, self.signal_shape).float()
+        x = x.view(1, 64, self.signal_shape).float().to(torch.device('cuda:0'))
         x = self.dense1(x)
         x = self.dense2(x)
         return (x)
@@ -62,7 +70,7 @@ class CriticZ(nn.Module):
     def forward(self, x):
         x = self.dense1(x)
         return (x)
-
+        
 def unroll_signal(self, x):
     x = np.array(x).reshape(100)
     return np.median(x)
@@ -88,7 +96,7 @@ def test(self):
         cs = critic_x(x)
         cs = tf.squeeze(cs).numpy()
         RE.append(re)
-        CS.append(cs)
+        CS.append(cs) 
 
         x_ = unroll_signal(x_)
 

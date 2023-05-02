@@ -6,12 +6,14 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
+from tqdm import tqdm
 
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.autograd import Variable
 from torch.utils.data import Dataset, DataLoader
+from torch.utils.data.dataloader import default_collate
 
 import model
 import anomaly_detection
@@ -19,20 +21,30 @@ import anomaly_detection
 logging.basicConfig(filename='train.log', level=logging.DEBUG)
 
 class SignalDataset(Dataset):
-    def __init__(self, path):
+    def __init__(self, path:str):
         self.signal_df = pd.read_csv(path)
         self.signal_columns = self.make_signal_list()
         self.make_rolling_signals()
 
-    def make_signal_list(self):
+    def make_signal_list(self) -> list:
+        """
+        Making signal column, range of signal-50 ~ signal49
+
+        Returns:
+            list: string list
+        """
         signal_list = list()
         for i in range(-50, 50):
             signal_list.append('signal'+str(i))
         return signal_list
 
-    def make_rolling_signals(self):
+    def make_rolling_signals(self) -> None:
+        """
+        Making dataset index as cycle
+        """
         for i in range(-50, 50):
             self.signal_df['signal'+str(i)] = self.signal_df['signal'].shift(i)
+        # drop NaN value and reset index
         self.signal_df = self.signal_df.dropna()
         self.signal_df = self.signal_df.reset_index(drop=True)
 
@@ -43,33 +55,52 @@ class SignalDataset(Dataset):
         row = self.signal_df.loc[idx]
         x = row[self.signal_columns].values.astype(float)
         x = torch.from_numpy(x)
+        x.cuda()
         # print(row.keys())
         return {'signal':x, 'anomaly':row['anomaly']}
 
-def critic_x_iteration(sample):
+def critic_x_iteration(sample:list) -> list:
+    """
+    
+
+    Args:
+        sample (numpy array): _description_
+
+    Returns:
+        list: _description_
+    """
+    # Adam optimizer
     optim_cx.zero_grad()
 
-    x = sample['signal'].view(1, batch_size, signal_shape)
+    # Calculate Critic score X - original, fake
+    x = sample['signal'].view(1, batch_size, signal_shape).to(device) # x.shape = (1, batch size, signal shape)
     valid_x = critic_x(x)
+    # print(valid_x.is_cuda)
     valid_x = torch.squeeze(valid_x)
-    critic_score_valid_x = torch.mean(torch.ones(valid_x.shape) * valid_x) #Wasserstein Loss
+    critic_score_valid_x = torch.mean(torch.ones(valid_x.shape).to(device) * valid_x) #Wasserstein Loss
+    # print(torch.squeeze(x).shape, valid_x.shape)
+    # critic_score_valid_x = torch.mean(x * valid_x) #Wasserstein Loss
 
-    #The sampled z are the anomalous points - points deviating from actual distribution of z (obtained through encoding x)
+    # The sampled z are the anomalous points - points deviating from actual distribution of z (obtained through encoding x)
     z = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1)
-    x_ = decoder(z)
+    x_ = decoder(z.to(device))
     fake_x = critic_x(x_)
     fake_x = torch.squeeze(fake_x)
-    critic_score_fake_x = torch.mean(torch.ones(fake_x.shape) * fake_x)  #Wasserstein Loss
+    critic_score_fake_x = torch.mean(torch.ones(fake_x.shape).to(device) * fake_x)  #Wasserstein Loss
 
-    alpha = torch.rand(x.shape)
+
+    # Gradient
+    alpha = torch.rand(x.shape).to(device)
     ix = Variable(alpha * x + (1 - alpha) * x_) #Random Weighted Average
     ix.requires_grad_(True)
     v_ix = critic_x(ix)
     v_ix.mean().backward()
     gradients = ix.grad
+
     #Gradient Penalty Loss
     gp_loss = torch.sqrt(torch.sum(torch.square(gradients).view(-1)))
 
+    # Detect original one / weight update
     #Critic has to maximize Cx(Valid X) - Cx(Fake X).
     #Maximizing the above is same as minimizing the negative.
     wl = critic_score_fake_x - critic_score_valid_x
@@ -80,29 +111,35 @@ def critic_x_iteration(sample):
     return loss
 
 def critic_z_iteration(sample):
+    # Adam optimizer
     optim_cz.zero_grad()
 
-    x = sample['signal'].view(1, batch_size, signal_shape)
+    # Calculate Critic score Z - original, fake    
+    x = sample['signal'].view(1, batch_size, signal_shape).to(device) # x.shape = (1, batch size, signal shape)
     z = encoder(x)
     valid_z = critic_z(z)
     valid_z = torch.squeeze(valid_z)
-    critic_score_valid_z = torch.mean(torch.ones(valid_z.shape) * valid_z)
+    critic_score_valid_z = torch.mean(torch.ones(valid_z.shape).to(device) * valid_z)
 
-    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1)
+    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device)
     fake_z = critic_z(z_)
     fake_z = torch.squeeze(fake_z)
-    critic_score_fake_z = torch.mean(torch.ones(fake_z.shape) * fake_z) #Wasserstein Loss
+    critic_score_fake_z = torch.mean(torch.ones(fake_z.shape).to(device) * fake_z) #Wasserstein Loss
 
-    wl = critic_score_fake_z - critic_score_valid_z
-
-    alpha = torch.rand(z.shape)
+    # Gradient
+    alpha = torch.rand(z.shape).to(device)
     iz = Variable(alpha * z + (1 - alpha) * z_) #Random Weighted Average
     iz.requires_grad_(True)
     v_iz = critic_z(iz)
     v_iz.mean().backward()
     gradients = iz.grad
+
     gp_loss = torch.sqrt(torch.sum(torch.square(gradients).view(-1)))
 
+    # Detect original one / weight update
+    #Critic has to maximize Cx(Valid X) - Cx(Fake X).
+    #Maximizing the above is same as minimizing the negative.
+    wl = critic_score_fake_z - critic_score_valid_z
     loss = wl + gp_loss
     loss.backward()
     optim_cz.step()
@@ -112,16 +149,16 @@ def critic_z_iteration(sample):
 def encoder_iteration(sample):
     optim_enc.zero_grad()
 
-    x = sample['signal'].view(1, batch_size, signal_shape)
+    x = sample['signal'].view(1, batch_size, signal_shape).to(device)
     valid_x = critic_x(x)
     valid_x = torch.squeeze(valid_x)
-    critic_score_valid_x = torch.mean(torch.ones(valid_x.shape) * valid_x) #Wasserstein Loss
+    critic_score_valid_x = torch.mean(torch.ones(valid_x.shape).to(device) * valid_x) #Wasserstein Loss
 
-    z = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1)
+    z = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device)
     x_ = decoder(z)
     fake_x = critic_x(x_)
     fake_x = torch.squeeze(fake_x)
-    critic_score_fake_x = torch.mean(torch.ones(fake_x.shape) * fake_x)
+    critic_score_fake_x = torch.mean(torch.ones(fake_x.shape).to(device) * fake_x)
 
     enc_z = encoder(x)
     gen_x = decoder(enc_z)
@@ -136,16 +173,16 @@ def encoder_iteration(sample):
 def decoder_iteration(sample):
     optim_dec.zero_grad()
 
-    x = sample['signal'].view(1, batch_size, signal_shape)
+    x = sample['signal'].view(1, batch_size, signal_shape).to(device)
     z = encoder(x)
     valid_z = critic_z(z)
     valid_z = torch.squeeze(valid_z)
-    critic_score_valid_z = torch.mean(torch.ones(valid_z.shape) * valid_z)
+    critic_score_valid_z = torch.mean(torch.ones(valid_z.shape).to(device) * valid_z)
 
-    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1)
+    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device)
     fake_z = critic_z(z_)
     fake_z = torch.squeeze(fake_z)
-    critic_score_fake_z = torch.mean(torch.ones(fake_z.shape) * fake_z)
+    critic_score_fake_z = torch.mean(torch.ones(fake_z.shape).to(device) * fake_z)
 
     enc_z = encoder(x)
     gen_x = decoder(enc_z)
@@ -177,7 +214,9 @@ def train(n_epochs=2000):
             cx_loss = list()
             cz_loss = list()
 
-            for batch, sample in enumerate(train_loader):
+            for batch, sample in tqdm(enumerate(train_loader)):
+                # print(sample.shape)
+                sample['signal'].to(device)
                 loss = critic_x_iteration(sample)
                 cx_loss.append(loss)
 
@@ -191,7 +230,8 @@ def train(n_epochs=2000):
         encoder_loss = list()
         decoder_loss = list()
 
-        for batch, sample in enumerate(train_loader):
+        for batch, sample in tqdm(enumerate(train_loader)):
+            sample['signal'].to(device)
             enc_loss = encoder_iteration(sample)
             dec_loss = decoder_iteration(sample)
             encoder_loss.append(enc_loss)
@@ -201,12 +241,15 @@ def train(n_epochs=2000):
         cz_epoch_loss.append(torch.mean(torch.tensor(cz_nc_loss)))
         encoder_epoch_loss.append(torch.mean(torch.tensor(encoder_loss)))
         decoder_epoch_loss.append(torch.mean(torch.tensor(decoder_loss)))
+
+        # scheduler.step()
+
         print('Encoder decoder training done in epoch {}'.format(epoch))
         print('critic x loss {:.3f} critic z loss {:.3f} \nencoder loss {:.3f} decoder loss {:.3f}\n'.format(cx_epoch_loss[-1], cz_epoch_loss[-1], encoder_epoch_loss[-1], decoder_epoch_loss[-1]))
         logging.debug('Encoder decoder training done in epoch {}'.format(epoch))
         logging.debug('critic x loss {:.3f} critic z loss {:.3f} \nencoder loss {:.3f} decoder loss {:.3f}\n'.format(cx_epoch_loss[-1], cz_epoch_loss[-1], encoder_epoch_loss[-1], decoder_epoch_loss[-1]))
 
-        if epoch % 10 == 0:
+        if epoch % 1 == 0:
             torch.save(encoder.state_dict(), encoder.encoder_path)
             torch.save(decoder.state_dict(), decoder.decoder_path)
             torch.save(critic_x.state_dict(), critic_x.critic_x_path)
@@ -215,24 +258,25 @@ def train(n_epochs=2000):
 if __name__ == "__main__":
     # dataset = pd.read_csv('exchange-2_cpc_results.csv')
     
-    dataset = pd.read_csv('../data/3_bearing3.csv')
-    # dataset = dataset.sample(frac=1)
+    dataset = pd.read_csv('exchange-2_cpc_results.csv')
+    device = torch.device("cuda:0")
     #Splitting intro train and test
     #TODO could be done in a more pythonic way
-    train_len = int(0.9 * dataset.shape[0])
+    train_len = int(0.7 * dataset.shape[0])
     dataset[0:train_len].to_csv('train_dataset.csv', index=False)
     dataset[train_len:].to_csv('test_dataset.csv', index=False)
 
     train_dataset = SignalDataset(path='train_dataset.csv')
     test_dataset = SignalDataset(path='test_dataset.csv')
+    
     batch_size = 64
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, drop_last=True)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, drop_last=True)
-
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, drop_last=True) #, collate_fn=lambda x: default_collate(x).to(device))
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, drop_last=True) #, collate_fn=lambda x: default_collate(x).to(device))
+    print("     train dataset length: ", len(train_loader))
     logging.info('Number of train datapoints is {}'.format(len(train_dataset)))
     logging.info('Number of samples in train dataset {}'.format(len(train_dataset)))
 
-    lr = 1e-6
+    lr = 0.0005
 
     signal_shape = 100
     latent_space_dim = 20
@@ -241,10 +285,14 @@ if __name__ == "__main__":
     critic_x_path = 'models/critic_x.pt'
     critic_z_path = 'models/critic_z.pt'
     
-    encoder = model.Encoder(encoder_path, signal_shape)
-    decoder = model.Decoder(decoder_path, signal_shape)
-    critic_x = model.CriticX(critic_x_path, signal_shape)
-    critic_z = model.CriticZ(critic_z_path)
+    # Generator E
+    encoder = model.Encoder(encoder_path, signal_shape).to(device)
+    # Generator G
+    decoder = model.Decoder(decoder_path, signal_shape).to(device)
+    # Critic X
+    critic_x = model.CriticX(critic_x_path, signal_shape).to(device)
+    # Critic Z
+    critic_z = model.CriticZ(critic_z_path).to(device)
 
     mse_loss = torch.nn.MSELoss()
 
@@ -253,6 +301,8 @@ if __name__ == "__main__":
     optim_cx = optim.Adam(critic_x.parameters(), lr=lr, betas=(0.5, 0.999))
     optim_cz = optim.Adam(critic_z.parameters(), lr=lr, betas=(0.5, 0.999))
 
-    train(n_epochs=100)
+    # scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer=optim_dec, T_max=300, eta_min=1e-6)
+
+    train(n_epochs=10)
 
     anomaly_detection.test(test_loader, encoder, decoder, critic_x)
