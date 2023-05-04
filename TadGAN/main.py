@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 from scipy import stats
 from tqdm import tqdm
 
+from scipy.signal import butter, filtfilt
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -23,8 +25,36 @@ logging.basicConfig(filename='train.log', level=logging.DEBUG)
 class SignalDataset(Dataset):
     def __init__(self, path:str):
         self.signal_df = pd.read_csv(path)
+        self.signal_df = self.make_abnormal_label()
+        # self.signal_df = self.noise_control()
         self.signal_columns = self.make_signal_list()
         self.make_rolling_signals()
+
+        
+    def make_abnormal_label(self):
+        """
+        make abnormal label as 0
+        * this function is only for no fault data
+
+        Args:
+            data (list): signal dataset
+        """
+        self.signal_df['anomaly'] = 0
+        self.signal_df.columns = ['', 'signal', 'anomaly']
+        self.signal_df = self.signal_df.drop([''], axis=1)
+        # print(data.head)
+        return self.signal_df
+
+    def noise_control(self):
+        array_data = np.array(self.signal_df['signal'], dtype=np.float64)
+        # array_data = np.float32(array_data[1:])
+        N = 10
+        Wn = 0.1
+        B, A = butter(N, Wn, output='ba')
+        signal = filtfilt(B, A, array_data)
+
+        self.signal_df['signal'] = signal
+        return self.signal_df
 
     def make_signal_list(self) -> list:
         """
@@ -258,7 +288,7 @@ def train(n_epochs=2000):
 if __name__ == "__main__":
     # dataset = pd.read_csv('exchange-2_cpc_results.csv')
     
-    dataset = pd.read_csv('exchange-2_cpc_results.csv')
+    dataset = pd.read_csv('C:/Users/dk866/Desktop/bearing_test/data/set2_b1_outer_race_failure.csv')
     device = torch.device("cuda:0")
     #Splitting intro train and test
     #TODO could be done in a more pythonic way
