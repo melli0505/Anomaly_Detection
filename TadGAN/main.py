@@ -23,15 +23,16 @@ import anomaly_detection
 logging.basicConfig(filename='train.log', level=logging.DEBUG)
 
 class SignalDataset(Dataset):
-    def __init__(self, path:str):
+    def __init__(self, path:str, is_test:bool = False):
         self.signal_df = pd.read_csv(path)
-        self.signal_df = self.make_abnormal_label()
+        # self.signal_df = self.make_rms()
+        self.signal_df = self.make_abnormal_label(is_test)
         # self.signal_df = self.noise_control()
         self.signal_columns = self.make_signal_list()
         self.make_rolling_signals()
 
         
-    def make_abnormal_label(self):
+    def make_abnormal_label(self, is_test):
         """
         make abnormal label as 0
         * this function is only for no fault data
@@ -39,22 +40,31 @@ class SignalDataset(Dataset):
         Args:
             data (list): signal dataset
         """
+        # print(self.signal_df.head, self.signal_df.columns)
+        # if is_test:
+        #     normal = [0 for _ in range(600)]
+        #     abnormal = [1 for _ in range(600, len(self.signal_df))]
+        #     anomaly = normal.extend(abnormal)
+        # else:
+        #     anomaly = 0
         self.signal_df['anomaly'] = 0
-        self.signal_df.columns = ['', 'signal', 'anomaly']
-        self.signal_df = self.signal_df.drop([''], axis=1)
+        self.signal_df.columns = ['signal', 'anomaly']
+        # print(self.signal_df.head)
+        # self.signal_df = self.signal_df.drop([''], axis=1)
         # print(data.head)
         return self.signal_df
 
-    def noise_control(self):
-        array_data = np.array(self.signal_df['signal'], dtype=np.float64)
-        # array_data = np.float32(array_data[1:])
-        N = 10
-        Wn = 0.1
-        B, A = butter(N, Wn, output='ba')
-        signal = filtfilt(B, A, array_data)
+    def make_rms(self):
+        last = 0
+        signal = []
+        for i in range(1, len(self.signal_df) // 430):
+            temp = np.sqrt(sum(self.signal_df[0][last: i * 430] ** 2) / 430)
+            signal.append(temp)
+            last = i * 430
 
-        self.signal_df['signal'] = signal
-        return self.signal_df
+        df = pd.DataFrame()
+        df['signal'] = signal
+        return df
 
     def make_signal_list(self) -> list:
         """
@@ -235,7 +245,7 @@ def train(n_epochs=2000):
     for epoch in range(n_epochs):
         print('Epoch : ', epoch)
         logging.debug('Epoch {}'.format(epoch))
-        n_critics = 5
+        n_critics = 10
 
         cx_nc_loss = list()
         cz_nc_loss = list()
@@ -279,16 +289,25 @@ def train(n_epochs=2000):
         logging.debug('Encoder decoder training done in epoch {}'.format(epoch))
         logging.debug('critic x loss {:.3f} critic z loss {:.3f} \nencoder loss {:.3f} decoder loss {:.3f}\n'.format(cx_epoch_loss[-1], cz_epoch_loss[-1], encoder_epoch_loss[-1], decoder_epoch_loss[-1]))
 
-        if epoch % 1 == 0:
-            torch.save(encoder.state_dict(), encoder.encoder_path)
-            torch.save(decoder.state_dict(), decoder.decoder_path)
-            torch.save(critic_x.state_dict(), critic_x.critic_x_path)
-            torch.save(critic_z.state_dict(), critic_z.critic_z_path)
+        if epoch % 10 == 0 or epoch == n_epochs - 1:
+            torch.save(encoder.state_dict(), encoder.encoder_path + '_' + str(epoch) + '.pt')
+            torch.save(decoder.state_dict(), decoder.decoder_path + '_' + str(epoch) + '.pt')
+            torch.save(critic_x.state_dict(), critic_x.critic_x_path + '_' + str(epoch) + '.pt')
+            torch.save(critic_z.state_dict(), critic_z.critic_z_path + '_' + str(epoch) + '.pt')
 
 if __name__ == "__main__":
     # dataset = pd.read_csv('exchange-2_cpc_results.csv')
-    
-    dataset = pd.read_csv('C:/Users/dk866/Desktop/bearing_test/data/set2_b1_outer_race_failure.csv')
+    # import csv
+    # file = open('C:/Users/dk866/Desktop/bearing_test/data/row_data.csv')
+    # file = open('C:/Users/dk866/Desktop/monitoring_system/Data/25_rms_nothing.csv')
+    # reader = csv.reader(file)
+    # l = list()
+
+    # for row in reader:
+    #     l.extend(list(map(float, row)))
+
+    # dataset = pd.DataFrame(l)
+    dataset = pd.read_csv('C:/Users/dk866/Desktop/bearing_test/data/set3_timefeatures.csv')['B2_rms']
     device = torch.device("cuda:0")
     #Splitting intro train and test
     #TODO could be done in a more pythonic way
@@ -297,12 +316,13 @@ if __name__ == "__main__":
     dataset[train_len:].to_csv('test_dataset.csv', index=False)
 
     train_dataset = SignalDataset(path='train_dataset.csv')
-    test_dataset = SignalDataset(path='test_dataset.csv')
+    test_dataset = SignalDataset(path='test_dataset.csv', is_test=True)
     
     batch_size = 64
     train_loader = DataLoader(train_dataset, batch_size=batch_size, drop_last=True) #, collate_fn=lambda x: default_collate(x).to(device))
     test_loader = DataLoader(test_dataset, batch_size=batch_size, drop_last=True) #, collate_fn=lambda x: default_collate(x).to(device))
     print("     train dataset length: ", len(train_loader))
+    # print(len(train_dataset.signal_df))
     logging.info('Number of train datapoints is {}'.format(len(train_dataset)))
     logging.info('Number of samples in train dataset {}'.format(len(train_dataset)))
 
@@ -310,10 +330,10 @@ if __name__ == "__main__":
 
     signal_shape = 100
     latent_space_dim = 20
-    encoder_path = 'models/encoder.pt'
-    decoder_path = 'models/decoder.pt'
-    critic_x_path = 'models/critic_x.pt'
-    critic_z_path = 'models/critic_z.pt'
+    encoder_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/encoder"
+    decoder_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/decoder"
+    critic_x_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/critic_x"
+    critic_z_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/critic_z"
     
     # Generator E
     encoder = model.Encoder(encoder_path, signal_shape).to(device)
@@ -333,6 +353,6 @@ if __name__ == "__main__":
 
     # scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer=optim_dec, T_max=300, eta_min=1e-6)
 
-    train(n_epochs=10)
+    train(n_epochs=100)
 
     anomaly_detection.test(test_loader, encoder, decoder, critic_x)
