@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-import os
+import os, csv
 import logging
 import pandas as pd
 import numpy as np
@@ -17,6 +17,8 @@ from torch.autograd import Variable
 from torch.utils.data import Dataset, DataLoader
 from torch.utils.data.dataloader import default_collate
 
+from sklearn.preprocessing import StandardScaler
+
 import model
 import anomaly_detection
 
@@ -27,7 +29,7 @@ class SignalDataset(Dataset):
         self.signal_df = pd.read_csv(path)
         # self.signal_df = self.make_rms()
         self.signal_df = self.make_abnormal_label(is_test)
-        # self.signal_df = self.noise_control()
+        # self.normalization()
         self.signal_columns = self.make_signal_list()
         self.make_rolling_signals()
 
@@ -47,24 +49,21 @@ class SignalDataset(Dataset):
         #     anomaly = normal.extend(abnormal)
         # else:
         #     anomaly = 0
+        # self.signal_df = self.signal_df.drop(['skew'], axis=1)
         self.signal_df['anomaly'] = 0
+        print(self.signal_df.head)
         self.signal_df.columns = ['signal', 'anomaly']
         # print(self.signal_df.head)
         # self.signal_df = self.signal_df.drop([''], axis=1)
         # print(data.head)
         return self.signal_df
-
-    def make_rms(self):
-        last = 0
-        signal = []
-        for i in range(1, len(self.signal_df) // 430):
-            temp = np.sqrt(sum(self.signal_df[0][last: i * 430] ** 2) / 430)
-            signal.append(temp)
-            last = i * 430
-
-        df = pd.DataFrame()
-        df['signal'] = signal
-        return df
+    
+    def normalization(self):
+        stder = StandardScaler()
+        signal = np.array(self.signal_df['signal']).reshape(self.signal_df['signal'].shape[0], 1)
+        stder.fit(signal)
+        sig = stder.transform(signal)
+        self.signal_df['signal'] = sig.reshape(sig.shape[0])
 
     def make_signal_list(self) -> list:
         """
@@ -83,7 +82,7 @@ class SignalDataset(Dataset):
         Making dataset index as cycle
         """
         for i in range(-50, 50):
-            self.signal_df['signal'+str(i)] = self.signal_df['signal'].shift(i)
+            self.signal_df['signal'+str(i)] = np.roll(self.signal_df['signal'], shift=i)# self.signal_df['signal'].shift(i)
         # drop NaN value and reset index
         self.signal_df = self.signal_df.dropna()
         self.signal_df = self.signal_df.reset_index(drop=True)
@@ -113,17 +112,14 @@ def critic_x_iteration(sample:list) -> list:
     optim_cx.zero_grad()
 
     # Calculate Critic score X - original, fake
-    x = sample['signal'].view(1, batch_size, signal_shape).to(device) # x.shape = (1, batch size, signal shape)
+    x = sample['signal'].view(1, batch_size, signal_shape).to(device) # x.shape = (1, 64, 100)
     valid_x = critic_x(x)
-    # print(valid_x.is_cuda)
     valid_x = torch.squeeze(valid_x)
-    critic_score_valid_x = torch.mean(torch.ones(valid_x.shape).to(device) * valid_x) #Wasserstein Loss
-    # print(torch.squeeze(x).shape, valid_x.shape)
-    # critic_score_valid_x = torch.mean(x * valid_x) #Wasserstein Loss
+    critic_score_valid_x = torch.mean(torch.ones(valid_x.shape).to(device) * valid_x) # Wasserstein Loss
 
     # The sampled z are the anomalous points - points deviating from actual distribution of z (obtained through encoding x)
-    z = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1)
-    x_ = decoder(z.to(device))
+    z = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1) # 1, 64, 100, latent space
+    x_ = decoder(z.to(device)) # time series - Generator G 
     fake_x = critic_x(x_)
     fake_x = torch.squeeze(fake_x)
     critic_score_fake_x = torch.mean(torch.ones(fake_x.shape).to(device) * fake_x)  #Wasserstein Loss
@@ -156,12 +152,12 @@ def critic_z_iteration(sample):
 
     # Calculate Critic score Z - original, fake    
     x = sample['signal'].view(1, batch_size, signal_shape).to(device) # x.shape = (1, batch size, signal shape)
-    z = encoder(x)
+    z = encoder(x) # latent space, Generator E
     valid_z = critic_z(z)
     valid_z = torch.squeeze(valid_z)
     critic_score_valid_z = torch.mean(torch.ones(valid_z.shape).to(device) * valid_z)
 
-    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device)
+    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device) # fake latent space
     fake_z = critic_z(z_)
     fake_z = torch.squeeze(fake_z)
     critic_score_fake_z = torch.mean(torch.ones(fake_z.shape).to(device) * fake_z) #Wasserstein Loss
@@ -194,16 +190,16 @@ def encoder_iteration(sample):
     valid_x = torch.squeeze(valid_x)
     critic_score_valid_x = torch.mean(torch.ones(valid_x.shape).to(device) * valid_x) #Wasserstein Loss
 
-    z = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device)
-    x_ = decoder(z)
+    z = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device) # fake latent space
+    x_ = decoder(z) # Generator G, fake time series
     fake_x = critic_x(x_)
     fake_x = torch.squeeze(fake_x)
     critic_score_fake_x = torch.mean(torch.ones(fake_x.shape).to(device) * fake_x)
 
-    enc_z = encoder(x)
-    gen_x = decoder(enc_z)
+    enc_z = encoder(x) # real latent space
+    gen_x = decoder(enc_z) # real time series
 
-    mse = mse_loss(x.float(), gen_x.float())
+    mse = mse_loss(x.float(), gen_x.float()) # compare real data - reconstruction data
     loss_enc = mse + critic_score_valid_x - critic_score_fake_x
     loss_enc.backward(retain_graph=True)
     optim_enc.step()
@@ -214,18 +210,18 @@ def decoder_iteration(sample):
     optim_dec.zero_grad()
 
     x = sample['signal'].view(1, batch_size, signal_shape).to(device)
-    z = encoder(x)
+    z = encoder(x) # latent space 
     valid_z = critic_z(z)
     valid_z = torch.squeeze(valid_z)
     critic_score_valid_z = torch.mean(torch.ones(valid_z.shape).to(device) * valid_z)
 
-    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device)
+    z_ = torch.empty(1, batch_size, latent_space_dim).uniform_(0, 1).to(device) # fake latent space
     fake_z = critic_z(z_)
     fake_z = torch.squeeze(fake_z)
     critic_score_fake_z = torch.mean(torch.ones(fake_z.shape).to(device) * fake_z)
 
-    enc_z = encoder(x)
-    gen_x = decoder(enc_z)
+    enc_z = encoder(x) # = z, latent space
+    gen_x = decoder(enc_z) # time series
 
     mse = mse_loss(x.float(), gen_x.float())
     loss_dec = mse + critic_score_valid_z - critic_score_fake_z
@@ -289,25 +285,27 @@ def train(n_epochs=2000):
         logging.debug('Encoder decoder training done in epoch {}'.format(epoch))
         logging.debug('critic x loss {:.3f} critic z loss {:.3f} \nencoder loss {:.3f} decoder loss {:.3f}\n'.format(cx_epoch_loss[-1], cz_epoch_loss[-1], encoder_epoch_loss[-1], decoder_epoch_loss[-1]))
 
-        if epoch % 10 == 0 or epoch == n_epochs - 1:
+        if epoch % 100 == 0 or epoch == n_epochs - 1:
             torch.save(encoder.state_dict(), encoder.encoder_path + '_' + str(epoch) + '.pt')
             torch.save(decoder.state_dict(), decoder.decoder_path + '_' + str(epoch) + '.pt')
             torch.save(critic_x.state_dict(), critic_x.critic_x_path + '_' + str(epoch) + '.pt')
             torch.save(critic_z.state_dict(), critic_z.critic_z_path + '_' + str(epoch) + '.pt')
 
 if __name__ == "__main__":
-    # dataset = pd.read_csv('exchange-2_cpc_results.csv')
-    # import csv
-    # file = open('C:/Users/dk866/Desktop/bearing_test/data/row_data.csv')
-    # file = open('C:/Users/dk866/Desktop/monitoring_system/Data/25_rms_nothing.csv')
-    # reader = csv.reader(file)
-    # l = list()
 
-    # for row in reader:
-    #     l.extend(list(map(float, row)))
+    # path = 'C:/Users/dk866/Desktop/monitoring_system/Data/nothing_90/'
 
-    # dataset = pd.DataFrame(l)
-    dataset = pd.read_csv('C:/Users/dk866/Desktop/bearing_test/data/set3_timefeatures.csv')['B2_rms']
+    # sig = []
+    # for fn in os.listdir(path):
+    #     file = open(path + fn, 'r')
+    #     rea = csv.reader(file)
+
+    #     for r in rea:
+    #         sig.extend(list(map(float, r)))
+
+    # dataset = pd.DataFrame(sig)
+
+    dataset = pd.read_csv('../Monitoring_System/Data/gearhead_time_feature_normalized.csv')['rms']
     device = torch.device("cuda:0")
     #Splitting intro train and test
     #TODO could be done in a more pythonic way
@@ -329,11 +327,11 @@ if __name__ == "__main__":
     lr = 0.0005
 
     signal_shape = 100
-    latent_space_dim = 20
-    encoder_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/encoder"
-    decoder_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/decoder"
-    critic_x_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/critic_x"
-    critic_z_path = "C:/Users/dk866/Desktop/bearing_test/TadGAN/models/critic_z"
+    latent_space_dim = 40
+    encoder_path = "TadGAN/models/2000_skew/encoder"
+    decoder_path = "TadGAN/models/2000_skew/decoder"
+    critic_x_path = "TadGAN/models/2000_skew/critic_x"
+    critic_z_path = "TadGAN/models/2000_skew/critic_z"
     
     # Generator E
     encoder = model.Encoder(encoder_path, signal_shape).to(device)
@@ -344,6 +342,10 @@ if __name__ == "__main__":
     # Critic Z
     critic_z = model.CriticZ(critic_z_path).to(device)
 
+    # encoder.load_state_dict(torch.load('TadGAN/models/encoder_299.pt'))
+    # decoder.load_state_dict(torch.load('TadGAN/models/decoder_299.pt'))
+    # critic_x.load_state_dict(torch.load('TadGAN/models/critic_x_299.pt'))
+    # critic_z.load_state_dict(torch.load('TadGAN/models/critic_z_299.pt'))
     mse_loss = torch.nn.MSELoss()
 
     optim_enc = optim.Adam(encoder.parameters(), lr=lr, betas=(0.5, 0.999))
@@ -353,6 +355,6 @@ if __name__ == "__main__":
 
     # scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer=optim_dec, T_max=300, eta_min=1e-6)
 
-    train(n_epochs=100)
+    train(n_epochs=2000)
 
     anomaly_detection.test(test_loader, encoder, decoder, critic_x)

@@ -3,6 +3,7 @@
 
 import os
 import logging
+from typing import Any, Mapping
 import numpy as np
 
 import torch
@@ -18,16 +19,19 @@ class Encoder(nn.Module):
     def __init__(self, encoder_path, signal_shape=100):
         super(Encoder, self).__init__()
         self.signal_shape = signal_shape
-        self.lstm = nn.LSTM(input_size=self.signal_shape, hidden_size=20, num_layers=1, bidirectional=True)
-        self.dense = nn.Linear(in_features=40, out_features=20)
+        self.lstm = nn.LSTM(input_size=self.signal_shape, hidden_size=40, num_layers=1, bidirectional=True)
+        # self.lstm = nn.LSTM(input_size=self.signal_shape, hidden_size=20, num_layers=1, bidirectional=True)
+        # self.dense = nn.Linear(in_features=80, out_features=20)
+        self.dense = nn.Linear(in_features=80, out_features=40)
         self.encoder_path = encoder_path
 
-    def forward(self, x):
-        x = x.view(1, 64, self.signal_shape).float().to(torch.device('cuda:0'))
+    def forward(self, x, shape=100):
+        x = x.view(1, 64, shape).float().to(torch.device('cuda:0'))
         x, (hn, cn) = self.lstm(x)
         x = self.dense(x)
         return (x)
-
+    
+    
 class Decoder(nn.Module):
     """
     Generate time series data from latent space. Generator G
@@ -35,7 +39,8 @@ class Decoder(nn.Module):
     def __init__(self, decoder_path, signal_shape=100):
         super(Decoder, self).__init__()
         self.signal_shape = signal_shape
-        self.lstm = nn.LSTM(input_size=20, hidden_size=64, num_layers=2, bidirectional=True)
+        # self.lstm = nn.LSTM(input_size=20, hidden_size=64, num_layers=2, bidirectional=True)
+        self.lstm = nn.LSTM(input_size=40, hidden_size=64, num_layers=2, bidirectional=True)
         self.dense = nn.Linear(in_features=128, out_features=self.signal_shape)
         self.decoder_path = decoder_path
 
@@ -51,8 +56,10 @@ class CriticX(nn.Module):
     def __init__(self, critic_x_path, signal_shape=100):
         super(CriticX, self).__init__()
         self.signal_shape = signal_shape
-        self.dense1 = nn.Linear(in_features=self.signal_shape, out_features=20)
-        self.dense2 = nn.Linear(in_features=20, out_features=1)
+        # self.dense1 = nn.Linear(in_features=self.signal_shape, out_features=20)
+        # self.dense2 = nn.Linear(in_features=20, out_features=1)
+        self.dense1 = nn.Linear(in_features=self.signal_shape, out_features=40)
+        self.dense2 = nn.Linear(in_features=40, out_features=1)
         self.critic_x_path = critic_x_path
 
     def forward(self, x):
@@ -64,7 +71,8 @@ class CriticX(nn.Module):
 class CriticZ(nn.Module):
     def __init__(self, critic_z_path):
         super(CriticZ, self).__init__()
-        self.dense1 = nn.Linear(in_features=20, out_features=1)
+        # self.dense1 = nn.Linear(in_features=20, out_features=1)
+        self.dense1 = nn.Linear(in_features=40, out_features=1)
         self.critic_z_path = critic_z_path
 
     def forward(self, x):
