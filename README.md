@@ -1,13 +1,16 @@
-# Fault Analysis based on TadGAN
+# Motor Fault Analysis using Vibration data
 
-This repository is made for applying TadGAN model to Fault Analysis problem. For now, data is stable and recorded, but the end of the project it would be a real-time series data.
-
-This project is now updating, does not work now.
-
-## TadGNN
-
-Implementation of TadGAN paper. Model implementation by gusty1g.
+- This repository is kind of experience report to train pattern of vibration data.
+- Now updating.
 
 ## Dataset
 
-Dataset is NASA bearing dataset, which is located in data directory.
+- Custom Vibration data
+- 17.0khz sampling rate, collected for 40 minutes
+
+## Models
+
+- TadGAN(https://github.com/arunppsg/TadGAN)
+- AnoGAN(https://github.com/yjucho1/anoGAN) -> **modified 2D to 1D**
+
+## Preprocessing
