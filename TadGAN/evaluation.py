@@ -149,7 +149,7 @@ def make_rms(sr, data):
     print(len(temp), len(temp[0]))
     rms = []
     for l in temp:
-        rms.append(np.sqrt(sum(l) ** 2  / sr)) 
+        rms.append(np.sqrt((l ** 2).sum()  / sr)) 
     print(len(rms))
     return rms
 
@@ -171,23 +171,26 @@ if __name__ == '__main__':
         column_name = input("Enter column name: ")
         origin_signal = pd.read_csv(filepath)[column_name]
     else:
+        limit = 3
         for filename in os.listdir(filepath):
             file = open(filepath + '/' + filename, 'r')
             reader = csv.reader(file)
             for row in reader:
                 origin_signal.extend(list(map(float, row)))
+            # limit -= 1
+            # if limit < 0: break
 
     # feature extraction
     is_row = input('If above data is row data, enter Y: ')
 
     if is_row in ['Y', 'y']:
         sampling_rate = float(input('Enter the sampling rate: '))
-        signal = make_rms(sampling_rate, origin_signal)
+        signal = make_rms(sampling_rate, np.array(origin_signal))
 
     signal = normalization(signal)
 
     # make data as trainable shape
-    dataset = Dataset(signal[:100])
+    dataset = Dataset(signal)
     
     # print(dataset.dataset['signal'][:5])
     # gpu accelerator 
@@ -198,16 +201,16 @@ if __name__ == '__main__':
 
     # load models
     encoder = Encoder('./TadGAN/models/encoder.pt').to('cuda:0')
-    encoder.load_state_dict(torch.load('./TadGAN/models/2000_rms/encoder_1200.pt'))
+    encoder.load_state_dict(torch.load('./TadGAN/models/2000_rms/encoder_1999.pt'))
 
     decoder = Decoder('./TadGAN/models/decoder.pt').to('cuda:0')
-    decoder.load_state_dict(torch.load('./TadGAN/models/2000_rms/decoder_1200.pt'))
+    decoder.load_state_dict(torch.load('./TadGAN/models/2000_rms/decoder_1999.pt'))
 
     criticz = CriticZ('./TadGAN/models/critic_z.pt').to('cuda:0')
-    criticz.load_state_dict(torch.load('./TadGAN/models/2000_rms/critic_z_1200.pt'))
+    criticz.load_state_dict(torch.load('./TadGAN/models/2000_rms/critic_z_1999.pt'))
 
     criticx = CriticX('./TadGAN/models/critic_x.pt').to('cuda:0')
-    criticx.load_state_dict(torch.load('./TadGAN/models/2000_rms/critic_x_1200.pt'))
+    criticx.load_state_dict(torch.load('./TadGAN/models/2000_rms/critic_x_1999.pt'))
 
     # reconstruction
     recon_result = list()
@@ -224,10 +227,12 @@ if __name__ == '__main__':
     
     plt.figure(figsize=[20, 10])
     plt.subplot(311)
-    plt.plot(origin_signal, color='orange')
+    plt.plot(signal, color='orange')
+
     plt.subplot(312)
     plt.plot(dataset.dataset['signal'][:len(recon_result[0])], color='b')
     plt.plot(recon_result[0], color='g')
+    
     plt.subplot(313)
     plt.plot(error, color='r')
     plt.show()
