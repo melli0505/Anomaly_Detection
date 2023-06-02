@@ -54,13 +54,18 @@ def generator_containing_discriminator(g, d):
     gan.compile(loss='binary_crossentropy', optimizer='adam')
     return gan
 
-def train(EPOCHS,BATCH_SIZE, X_train):
+def train(EPOCHS,BATCH_SIZE, X_train, resume=False):
     d = discriminator_model()
     print("#### discriminator ######")
     d.summary()
     g = generator_model()
     print("#### generator ######")
     g.summary()
+
+    if resume:
+        g.load_weights('assets/generator')
+        d.load_weights('assets/discriminator')
+
     d_on_g = generator_containing_discriminator(g, d)
     d.trainable = True
     for epoch in tqdm(range(EPOCHS)):
