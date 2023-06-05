@@ -12,5 +12,6 @@
 
 - TadGAN(https://github.com/arunppsg/TadGAN)
 - AnoGAN(https://github.com/yjucho1/anoGAN) -> **modified 2D to 1D**
+- MAD-GAN(https://github.com/Guillem96/madgan-pytorch) -> **fix training bugs**
 
 ## Preprocessing
