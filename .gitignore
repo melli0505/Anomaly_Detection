@@ -18,3 +18,7 @@ Orion/
 *.out
 */checkpoint/*
 */log/*
+MAD-GANs/
+timeseries-clustering-vae/
+Transfer-Learning-for-Fault-Diagnosis/
+Variational-Recurrent-Autoencoder-Tensorflow/

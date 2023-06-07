@@ -1,6 +1,7 @@
-# Motor Fault Analysis using Vibration data
+# Motor Fault Diagnosis using Vibration data
 
-- This repository is kind of experience report to train pattern of vibration data.
+- This repository is kind of test report about training pattern of vibration data.
+- Now I focus on detecting fault based on Unsupervised learning.
 - Now updating.
 
 ## Dataset
