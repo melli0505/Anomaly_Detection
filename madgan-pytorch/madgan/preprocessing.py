@@ -3,7 +3,7 @@ import csv
 import numpy as np
 import pandas as pd
 
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 
 def read_data(path: str):
     file = open(path, 'r')
@@ -13,7 +13,7 @@ def read_data(path: str):
     for row in reader:
         data.append(list(map(float, row)))
 
-    return np.array(data)
+    return np.array(data, dtype=np.float32)
 
 def reshape(window_size:int, data:np.array):
     if len(data.shape) > 1 and data.shape[1] == window_size:
@@ -30,6 +30,6 @@ def reshape(window_size:int, data:np.array):
 def normalize(data:np.array):
     if len(data.shape) == 1:
         data = data.reshape(-1, 1)
-    scaler = StandardScaler()
+    scaler = MinMaxScaler()
     scaler = scaler.fit(data)
     return scaler.transform(data)
